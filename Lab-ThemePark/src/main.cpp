@@ -1,10 +1,28 @@
-/*
+/*****************************************************************************
+ * AUTHOR      : Carlos Aguilera
+ * STUDENT ID  : 1152562
+ * LAB # 1     : Theme Park Day Planner
+ * CLASS       : CS1B
+ * SECTION     : M-W
+ * DUE DATE    : 01.26.22
+ ****************************************************************************/
 
-*/
 #include <iostream>
-#include <string>
 #include <iomanip>
+#include <string>
 
+/****************************************************************************
+ * Theme Park Day Planner
+ * --------------------------------------------------------------------------
+ * This program will output the class heading
+ * --------------------------------------------------------------------------
+ * INPUT:
+ * name = name of the kid
+ * boolDetermination = whether user chose yes or no
+ * age = age of kid
+ * OUTPUT:
+ * totalCost = total cost of the day
+ ***************************************************************************/
 void foodLogic(double *totalCost, bool isVegetarian, bool eatsCheese, const std::string &name)
 {
     if(isVegetarian == false && eatsCheese == true) {
@@ -38,32 +56,64 @@ void ageLogic(double *totalCost, const int &age, const std::string &name)
     }else
         std::cout << "Invalid Age\n";
 }
+int main() {
+	 /***********************************************************************
+	  * CONSTANTS
+	  * ---------------------------------------------------------------------
+	  * OUTPUT - USED FOR CLASS HEADING
+	  * ---------------------------------------------------------------------
+	  * PROGRAMMER : Programmer's Name
+	  * CLASS      : Student's Course
+	  * SECTION    : Class Days and Times
+	  * LAB_NUM    : Lab Number (specific to this lab)
+	  * LAB_NAME   : Title of the Lab
+	  **********************************************************************/
+	const char PROGRAMMER[] = "Carlos Aguilera";
+	const char CLASS[]      = "CS1B";
+	const char SECTION[]    = "MW: 7:30p - 9:50p";
+	const int LAB_NUM       = 1;
+	const char LAB_NAME[]   = "Theme Park Day Planner";
 
-int main()
-{
     std::string name {};
     char boolDetermination {};
     int age {};
     bool isVegetarian {}, eatsCheese {};
     double totalCost {};
 
+
+	/************************************************************************
+	 * OUTPUT - Class Heading
+	 ***********************************************************************/
+	std::cout << std::left;
+	std::cout << "****************************************************\n";
+	std::cout << "*   PROGRAMMED BY : " << PROGRAMMER << std::endl;
+	std::cout << "*   " << std::setw(14) <<"CLASS" << ": " << CLASS << std::endl;
+	std::cout << "*   " << std::setw(14) <<"SECTION" << ": " << SECTION << std::endl;
+	std::cout << "*   LAB #" << std::setw(9) << LAB_NUM << ": " << LAB_NAME << std::endl;
+	std::cout << "****************************************************\n\n";
+	std::cout << std::right;
+
     for(size_t i {0}; i < 10; i++)
     {
+        if(i != 0)
+            std::cin.ignore(100,'\n');
         std::cout << "What is your kid's name? ";
         std::getline(std::cin,name);
-        name.substr(0, name.find(" "));
+        name = name.substr(0, name.find(" "));
         std::cout << "How old is the kid? ";
         std::cin >> age;
+        std::cin.ignore(100,'\n');
         std::cout << "Vegetarian (Y/N) ";
-        std::cin >> boolDetermination;
+        std::cin.get(boolDetermination);
 
         if(boolDetermination == 'Y' || boolDetermination == 'y')
             isVegetarian = true;
         else
             isVegetarian = false;
 
+        std::cin.ignore(100,'\n');
         std::cout << "Does he/she like cheese? ";
-        std::cin >> boolDetermination;
+        std::cin.get(boolDetermination);
 
         if(boolDetermination == 'Y' || boolDetermination == 'y')
             eatsCheese = true;
@@ -72,7 +122,7 @@ int main()
         
         ageLogic(&totalCost, age, name);
         foodLogic(&totalCost, isVegetarian, eatsCheese, name);
-        std::cout << "---------------\n";
+        std::cout << "\n---------------\n";
     }
     std::cout << "The total cost of the day is: " << std::fixed << std::setprecision(2) << totalCost << "\n";
     std::cout << "The average cost per kid is: " << totalCost/10 << "\n";
