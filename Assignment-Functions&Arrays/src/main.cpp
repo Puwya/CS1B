@@ -7,8 +7,7 @@
  * DUE DATE    : 
  ****************************************************************************/
 
-#include <iostream>
-#include <iomanip>
+#include "main.hpp"
 
 /****************************************************************************
  * Title:
@@ -19,6 +18,7 @@
  *
  * OUTPUT:
  ***************************************************************************/
+
 int main() {
 	 /***********************************************************************
 	  * CONSTANTS
@@ -35,9 +35,11 @@ int main() {
 	const char CLASS[]      = "CS1B";
 	const char SECTION[]    = "MW: 7:30p - 9:50p";
 	const int LAB_NUM       = 1;
-	const char LAB_NAME[]   = "";
+	const char LAB_NAME[]   = "Functions & Arrays";
 
-	// (variable declerations go here)
+	char selection {};
+	std::string inputFileName {}, outputFileName {}, temp {};
+	size_t sizeofArray {0};
 
 
 	/************************************************************************
@@ -51,4 +53,64 @@ int main() {
 	std::cout << "*   LAB #" << std::setw(9) << LAB_NUM << ": " << LAB_NAME << std::endl;
 	std::cout << "****************************************************\n\n";
 	std::cout << std::right;
+	/************************************************************************/
+
+	std::cout << "What input file would you like to use? ";
+	std::cin >> inputFileName;
+	std::cout << "What output file would you like to use? ";
+	std::cin >> outputFileName;
+
+	std::fstream inFile;
+	inFile.open(inputFileName, std::ios::in);
+	while(getline(inFile, temp))
+		++sizeofArray;
+	sizeofArray /= 2;
+	inFile.close();
+
+	std::string arrayofNames[sizeofArray];
+	int arrayofIDs[sizeofArray];
+	double arrayofBalances[sizeofArray];
+	readFile(inputFileName, sizeofArray, arrayofNames, arrayofIDs, arrayofBalances);
+
+
+	do
+	{
+		displayMenu();
+		std::cout << "Enter an option (0 to exit): ";
+		std::cin >> selection;
+
+		switch (selection)
+		{
+			case '1':
+			{
+				break;
+			}
+			case '2':
+			{
+				break;
+			}
+			case '3':
+			{
+				break;
+			}
+			case '4':
+			{
+				break;
+			}
+			case '5':
+			{
+				break;
+			}
+			case '0':
+			{
+				break;
+			}
+			default:
+			{
+				std::cout << "Invalid input!\n";
+				break;
+			}
+		}
+	} while (selection != '0');
+	
 }
