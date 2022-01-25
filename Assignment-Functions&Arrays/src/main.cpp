@@ -22,27 +22,28 @@
 int main()
 {
 	heading();
-	char selection {};
+
 	std::string inputFileName {}, outputFileName {}, temp {};
-	size_t sizeofArray {0};
-
 	std::cout << "What input file would you like to use? ";
-	std::cin >> inputFileName;
+	std::cin >> inputFileName; //reads input for what file to read from
 	std::cout << "What output file would you like to use? ";
-	std::cin >> outputFileName;
+	std::cin >> outputFileName; // reads input for what file to write to
 
+	size_t sizeofArray {0};
 	std::fstream inFile;
-	inFile.open(inputFileName, std::ios::in);
-	while(getline(inFile, temp))
-		++sizeofArray;
-	sizeofArray /= 2;
+	inFile.open(inputFileName, std::ios::in); //file is in read only mode
+	while(getline(inFile, temp))//stores line in temporary string
+		++sizeofArray;// a loop that gets the number of lines in the file
+	sizeofArray /= 2;// works for the type of formatting that the input file has if format changes then bugs could occur
 	inFile.close();
 
 	std::string arrayofNames[sizeofArray];
 	int arrayofIDs[sizeofArray];
 	double arrayofBalances[sizeofArray];
-	readFile(inputFileName, sizeofArray, arrayofNames, arrayofIDs, arrayofBalances);
 
+	readFile(inputFileName, sizeofArray, arrayofNames, arrayofIDs, arrayofBalances);//reads file and sets values in the arrays
+
+	char selection {};
 	do
 	{
 		std::cout << "\nMenu Options\n\n"
@@ -58,6 +59,7 @@ int main()
 		switch (selection)
 		{
 			case '1': {
+
 				break;
 			}
 			case '2': {

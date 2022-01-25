@@ -1,5 +1,3 @@
-#include "main.hpp"
-
 void outputFile(std::string outputFileName, size_t sizeofArray, std::string arrayofNames[], int arrayofIDs[], double arrayofBalances[])
 {
     std::fstream outFile;
@@ -7,7 +5,7 @@ void outputFile(std::string outputFileName, size_t sizeofArray, std::string arra
     outFile << "Larger Balance:\n";
     outFile << "ID #     NAME                     BALANCE DUE\n";
     outFile << "----     --------------------     -----------\n";
-    outFile << arrayofIDs[largestBalanceIndex(sizeofArray, arrayofBalances)] << "     ";
+    outFile << arrayofIDs[alanceIndex(sizeofArray, arrayofBalances)] << "     ";
     outFile << arrayofNames[largestBalanceIndex(sizeofArray, arrayofBalances)];
     outFile.close();
 }
