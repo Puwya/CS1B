@@ -59,7 +59,15 @@ int main()
 		switch (selection)
 		{
 			case '1': {
-
+				std::fstream outFile;
+				outFile.open(outputFileName, std::ios::app);
+				outFile << "Larger Balance:\n";
+				outFile << "ID #     NAME                     BALANCE DUE\n";
+				outFile << "----     --------------------     -----------\n";
+				outFile << arrayofIDs[balanceIndex(selection, sizeofArray, arrayofBalances)] << "     ";
+				outFile << arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)] << std::setw(26 - arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)].size());
+				outFile << "$" << arrayofBalances[balanceIndex(selection, sizeofArray, arrayofBalances)];
+				outFile.close();
 				break;
 			}
 			case '2': {
