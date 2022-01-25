@@ -1,16 +1,16 @@
 /*****************************************************************************
  * AUTHOR      : Carlos Aguilera
  * STUDENT ID  : 1152562
- * LAB #       : 
+ * LAB #       : 1
  * CLASS       : CS1B
  * SECTION     : M-W
- * DUE DATE    : 
+ * DUE DATE    : 02.02.22
  ****************************************************************************/
 
 #include "main.hpp"
 
 /****************************************************************************
- * Title:
+ * Title: Functions & Arrays
  * --------------------------------------------------------------------------
  * This program will output the class heading
  * --------------------------------------------------------------------------
@@ -19,41 +19,12 @@
  * OUTPUT:
  ***************************************************************************/
 
-int main() {
-	 /***********************************************************************
-	  * CONSTANTS
-	  * ---------------------------------------------------------------------
-	  * OUTPUT - USED FOR CLASS HEADING
-	  * ---------------------------------------------------------------------
-	  * PROGRAMMER : Programmer's Name
-	  * CLASS      : Student's Course
-	  * SECTION    : Class Days and Times
-	  * LAB_NUM    : Lab Number (specific to this lab)
-	  * LAB_NAME   : Title of the Lab
-	  **********************************************************************/
-	const char PROGRAMMER[] = "Carlos Aguilera";
-	const char CLASS[]      = "CS1B";
-	const char SECTION[]    = "MW: 7:30p - 9:50p";
-	const int LAB_NUM       = 1;
-	const char LAB_NAME[]   = "Functions & Arrays";
-
+int main()
+{
+	heading();
 	char selection {};
 	std::string inputFileName {}, outputFileName {}, temp {};
 	size_t sizeofArray {0};
-
-
-	/************************************************************************
-	 * OUTPUT - Class Heading
-	 ***********************************************************************/
-	std::cout << std::left;
-	std::cout << "****************************************************\n";
-	std::cout << "*   PROGRAMMED BY : " << PROGRAMMER << std::endl;
-	std::cout << "*   " << std::setw(14) <<"CLASS" << ": " << CLASS << std::endl;
-	std::cout << "*   " << std::setw(14) <<"SECTION" << ": " << SECTION << std::endl;
-	std::cout << "*   LAB #" << std::setw(9) << LAB_NUM << ": " << LAB_NAME << std::endl;
-	std::cout << "****************************************************\n\n";
-	std::cout << std::right;
-	/************************************************************************/
 
 	std::cout << "What input file would you like to use? ";
 	std::cin >> inputFileName;
@@ -72,11 +43,16 @@ int main() {
 	double arrayofBalances[sizeofArray];
 	readFile(inputFileName, sizeofArray, arrayofNames, arrayofIDs, arrayofBalances);
 
-
 	do
 	{
-		displayMenu();
-		std::cout << "Enter an option (0 to exit): ";
+		std::cout << "\nMenu Options\n\n"
+				<< "1 - Find the larger balance\n"
+				<< "2 - Find the smaller balance\n"
+				<< "3 - Obtain the sum of all balances\n"
+				<< "4 - Obtain the average of all balances\n"
+				<< "5 - Find Person\n"
+				<< "0 - Exit\n"
+		        << "Enter an option (0 to exit): ";
 		std::cin >> selection;
 
 		switch (selection)

@@ -5,7 +5,7 @@
 #include <string>
 #include <fstream>
 
-void displayMenu();
+void heading();
 void readFile(std::string inputFileName, size_t sizeofArray, std::string arrayofNames[], int arrayofIDs[], double arrayofBalances[]);
 int largestBalanceIndex(size_t sizeofArray, double arrayofBalances[]);
 int smallestBalanceIndex(size_t sizeofArray, double arrayofBalances[]);
