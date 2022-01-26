@@ -15,8 +15,13 @@
  * This program will output the class heading
  * --------------------------------------------------------------------------
  * INPUT:
- *
+ * inputFileName {file name for input}
+ * outputFileName {file name for output}
+ * selection {char for switch case condition}
+ * inputName {name input to search for from user}
+ * inFile {read from input file}
  * OUTPUT:
+ * outFile {output to file}
  ***************************************************************************/
 
 int main()
@@ -55,10 +60,13 @@ int main()
 				<< "0 - Exit\n"
 		        << "Enter an option (0 to exit): ";
 		std::cin >> selection;
+		std::cout << "\n";
 
 		switch (selection)
 		{
 			case '1': {
+				std::cout << "Finding the Larger Balance...\n";
+				
 				std::fstream outFile;
 				outFile.open(outputFileName, std::ios::app);
 				outFile << "Larger Balance:\n";
@@ -66,23 +74,70 @@ int main()
 				outFile << "----     --------------------     -----------\n";
 				outFile << arrayofIDs[balanceIndex(selection, sizeofArray, arrayofBalances)] << "     ";
 				outFile << arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)] << std::setw(26 - arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)].size());
-				outFile << "$" << arrayofBalances[balanceIndex(selection, sizeofArray, arrayofBalances)];
+				outFile << "$" << std::setw(10) << arrayofBalances[balanceIndex(selection, sizeofArray, arrayofBalances)] << "\n\n";
 				outFile.close();
 				break;
 			}
 			case '2': {
+				std::cout << "Finding the Smaller Balance...\n";
+
+				std::fstream outFile;
+				outFile.open(outputFileName, std::ios::app);
+				outFile << "Smaller Balance:\n";
+				outFile << "ID #     NAME                     BALANCE DUE\n";
+				outFile << "----     --------------------     -----------\n";
+				outFile << arrayofIDs[balanceIndex(selection, sizeofArray, arrayofBalances)] << "     ";
+				outFile << arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)] << std::setw(26 - arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)].size());
+				outFile << "$" << std::setw(10) << arrayofBalances[balanceIndex(selection, sizeofArray, arrayofBalances)] << "\n\n";
+				outFile.close();
 				break;
 			}
 			case '3': {
+				std::cout << "Obtaining the sum of all Balances...\n";
+
+				std::fstream outFile;
+				outFile.open(outputFileName, std::ios::app);
+				outFile << "Sum of Balance for all persons:\n";
+				outFile << std::fixed << std::setprecision(2) << "$" << std::setw(10) << sumofBalances(sizeofArray, arrayofBalances) << "\n\n";
+				outFile.close();
 				break;
 			}
 			case '4': {
+				std::cout << "Obtaining the average of all Balances...\n";
+
+				std::fstream outFile;
+				outFile.open(outputFileName, std::ios::app);
+				outFile << "Average Balance for all persons:\n";
+				outFile << std::fixed << std::setprecision(2) << "$" << std::setw(10) << sumofBalances(sizeofArray, arrayofBalances)/sizeofArray << "\n\n";
+				outFile.close();
 				break;
 			}
 			case '5': {
+				std::string inputName {};
+				std::cout << "Who do you want to search for (enter done to exit): ";
+				std::cin.ignore(10, '\n');
+				std::getline(std::cin, inputName);
+
+				if(inputName == "done")
+					continue;
+				else if(searchName(inputName, sizeofArray, arrayofNames) != -1) {
+					std::cout << "Found.\n";
+
+					std::fstream outFile;
+					outFile.open(outputFileName, std::ios::app);
+					outFile << "Search Name:\n";
+					outFile << "ID #     NAME                     BALANCE DUE\n";
+					outFile << "----     --------------------     -----------\n";
+					outFile << arrayofIDs[searchName(inputName, sizeofArray, arrayofNames)] << "     ";
+					outFile << arrayofNames[searchName(inputName, sizeofArray, arrayofNames)] << std::setw(26 - arrayofNames[searchName(inputName, sizeofArray, arrayofNames)].size());
+					outFile << "$" << std::setw(10) << arrayofBalances[searchName(inputName, sizeofArray, arrayofNames)] << "\n\n";
+					outFile.close();
+				}else
+					std::cout << inputName << " was not found.\n";
 				break;
 			}
 			case '0': {
+				std::cout << "Thank you for using my program.\n";
 				break;
 			}
 			default: {
