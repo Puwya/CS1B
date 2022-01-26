@@ -68,12 +68,13 @@ int main()
 				std::cout << "Finding the Larger Balance...\n";
 				
 				std::fstream outFile;
-				outFile.open(outputFileName, std::ios::app);
+				outFile.open(outputFileName, std::ios::app);//appends to file and doesn't erase but adds instead
 				outFile << "Larger Balance:\n";
 				outFile << "ID #     NAME                     BALANCE DUE\n";
 				outFile << "----     --------------------     -----------\n";
-				outFile << arrayofIDs[balanceIndex(selection, sizeofArray, arrayofBalances)] << "     ";
-				outFile << arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)] << std::setw(26 - arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)].size());
+				outFile << arrayofIDs[balanceIndex(selection, sizeofArray, arrayofBalances)] << "     ";//returns an index for the largest balance in the input file
+				outFile << arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)];
+				outFile << std::setw(26 - arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)].size());//returns the size of the largest balance name and subtracts a set width of 26 to get proper format
 				outFile << "$" << std::setw(10) << arrayofBalances[balanceIndex(selection, sizeofArray, arrayofBalances)] << "\n\n";
 				outFile.close();
 				break;
@@ -87,7 +88,8 @@ int main()
 				outFile << "ID #     NAME                     BALANCE DUE\n";
 				outFile << "----     --------------------     -----------\n";
 				outFile << arrayofIDs[balanceIndex(selection, sizeofArray, arrayofBalances)] << "     ";
-				outFile << arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)] << std::setw(26 - arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)].size());
+				outFile << arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)]; 
+				outFile << std::setw(26 - arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)].size());
 				outFile << "$" << std::setw(10) << arrayofBalances[balanceIndex(selection, sizeofArray, arrayofBalances)] << "\n\n";
 				outFile.close();
 				break;
@@ -98,7 +100,7 @@ int main()
 				std::fstream outFile;
 				outFile.open(outputFileName, std::ios::app);
 				outFile << "Sum of Balance for all persons:\n";
-				outFile << std::fixed << std::setprecision(2) << "$" << std::setw(10) << sumofBalances(sizeofArray, arrayofBalances) << "\n\n";
+				outFile << std::fixed << std::setprecision(2) << "$" << std::setw(10) << sumofBalances(sizeofArray, arrayofBalances) << "\n\n";//returns sum of balances
 				outFile.close();
 				break;
 			}
@@ -108,7 +110,7 @@ int main()
 				std::fstream outFile;
 				outFile.open(outputFileName, std::ios::app);
 				outFile << "Average Balance for all persons:\n";
-				outFile << std::fixed << std::setprecision(2) << "$" << std::setw(10) << sumofBalances(sizeofArray, arrayofBalances)/sizeofArray << "\n\n";
+				outFile << std::fixed << std::setprecision(2) << "$" << std::setw(10) << sumofBalances(sizeofArray, arrayofBalances)/sizeofArray << "\n\n";//returns average of balances using the size of array or how many IDs we have
 				outFile.close();
 				break;
 			}
@@ -118,9 +120,9 @@ int main()
 				std::cin.ignore(10, '\n');
 				std::getline(std::cin, inputName);
 
-				if(inputName == "done")
+				if(inputName == "done")//expection handling for when user enters done
 					continue;
-				else if(searchName(inputName, sizeofArray, arrayofNames) != -1) {
+				else if(searchName(inputName, sizeofArray, arrayofNames) != -1) {// function returns a -1 if not found and if found returns index that it was found in
 					std::cout << "Found.\n";
 
 					std::fstream outFile;
@@ -129,11 +131,12 @@ int main()
 					outFile << "ID #     NAME                     BALANCE DUE\n";
 					outFile << "----     --------------------     -----------\n";
 					outFile << arrayofIDs[searchName(inputName, sizeofArray, arrayofNames)] << "     ";
-					outFile << arrayofNames[searchName(inputName, sizeofArray, arrayofNames)] << std::setw(26 - arrayofNames[searchName(inputName, sizeofArray, arrayofNames)].size());
+					outFile << arrayofNames[searchName(inputName, sizeofArray, arrayofNames)];
+					outFile << std::setw(26 - arrayofNames[searchName(inputName, sizeofArray, arrayofNames)].size());
 					outFile << "$" << std::setw(10) << arrayofBalances[searchName(inputName, sizeofArray, arrayofNames)] << "\n\n";
 					outFile.close();
 				}else
-					std::cout << inputName << " was not found.\n";
+					std::cout << inputName << " was not found.\n";//handling not found
 				break;
 			}
 			case '0': {
