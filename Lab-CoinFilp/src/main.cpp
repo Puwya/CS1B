@@ -45,7 +45,5 @@ int main()
             std::cin.ignore(10,'\n');
         }
     }
-
-    std::cout << "It took you " << flipCount << " tosses to get 3 heads in a row\n";
-    
+    outputResults(flipCount, averageLogic(totalHeadCount, flipCount));
 }
