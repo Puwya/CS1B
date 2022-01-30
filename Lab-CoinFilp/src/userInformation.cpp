@@ -17,7 +17,7 @@ void userInformation()
     if(userGender == 'm' || userGender == 'M')
         std::cout << "Mr. " << userName << "\n\n";
     else if(userGender == 'f' || userGender == 'F')
-        std::cout << "Mrs. " << userName << "\n\n";
+        std::cout << "Ms. " << userName << "\n\n";
     else
         std::cout << userName << "\n\n";
 }

@@ -4,3 +4,4 @@
 
 void heading();
 void userInformation();
+bool coinFlip();
