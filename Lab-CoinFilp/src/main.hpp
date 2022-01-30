@@ -2,8 +2,8 @@
 #include <iostream>
 #include <iomanip>
 
-void heading();
-void userInformation();
-bool coinFlip();
-size_t averageLogic(size_t totalHeadCount, size_t totalFlipCount);
-void outputResults(size_t totalFlipCount, size_t averageHeadFlip);
+void heading(); //Displays heading to console
+void userInformation(); //Handles user data ex. name, and sex
+bool coinFlip(); //Returns true or false depending on whether it generates a 0 or 1
+size_t averageLogic(const size_t &totalHeadCount, const size_t &totalFlipCount);//Returns average head flip per total flip count in percentage
+void outputResults(const size_t &totalFlipCount, size_t averageHeadFlip); //Displays results of the program
