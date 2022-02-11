@@ -37,7 +37,7 @@ int main()
 	size_t sizeofArray {0};
 	std::fstream inFile;
 	inFile.open(inputFileName, std::ios::in); //file is in read only mode
-	while(getline(inFile, temp))//stores line in temporary string
+	while(inFile)//stores line in temporary string
 		++sizeofArray;// a loop that gets the number of lines in the file
 	sizeofArray /= 2;// works for the type of formatting that the input file has if format changes then bugs could occur
 	inFile.close();

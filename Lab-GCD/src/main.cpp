@@ -19,7 +19,6 @@
  * int value2 CALC & IN - value from the user and comparison
  ***************************************************************************/
 
-
 int main() 
 {
     printHeader(std::cout);
