@@ -30,5 +30,24 @@ int main()
         std::cin >> names[i];
     }
 
+    std::string inputName {};
+    do
+    {
+        int inputNameInstances {0};
+        std::cout << "\nWho do you want to search for(enter done to exit)? ";
+        std::cin >> inputName;
+
+        if(inputName != "done")
+        {
+            for(auto name : names)
+                if(inputName == name)
+                    ++inputNameInstances;
+
+            std::cout << "There are " << inputNameInstances << " of the name " << inputName << ".\n\n";
+        }
+
+    } while (inputName != "done");
+
+    std::cout << "Thank you for using my program!\n";
     return 0;
 }
