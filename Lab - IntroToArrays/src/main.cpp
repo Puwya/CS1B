@@ -43,7 +43,12 @@ int main()
                 if(inputName == name)
                     ++inputNameInstances;
 
-            std::cout << "There are " << inputNameInstances << " of the name " << inputName << ".\n\n";
+            if(inputNameInstances > 1)
+                std::cout << "There are " << inputNameInstances << " instances of the name " << inputName << ".\n";
+            else if(inputNameInstances == 1)
+                std::cout << "There are one instance of the name " << inputName << ".\n";
+            else if(inputNameInstances == 0)
+                std::cout << inputName << "'s name does not exist in the list.\n";
         }
 
     } while (inputName != "done");
