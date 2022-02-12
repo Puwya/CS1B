@@ -1,22 +1,24 @@
 /*****************************************************************************
  * AUTHOR      : Carlos Aguilera
  * STUDENT ID  : 1152562
- * LAB #       : 
+ * LAB #4      : Intro to Arrays
  * CLASS       : CS1B
  * SECTION     : M-W
- * DUE DATE    : 
+ * DUE DATE    : 02.16.22 
  ****************************************************************************/
 
 #include "main.hpp"
 
 /****************************************************************************
- * Title:
+ * Title: Intro to Arrays
  * --------------------------------------------------------------------------
- * This program will output the class heading
+ * This program will take 10 name inputs from the keyboard and console out
+ * how many instances there were of a certain name chosen by the user.
  * --------------------------------------------------------------------------
- * INPUT:
- *
- * OUTPUT:
+ * const int AR_SIZE {10}; CALC - How big the array needs to be
+ * std::string names[AR_SIZE]; - holds array of names type is string
+ * std::string inputName {}; IN & CALC - input of name to be found
+ * int inputNameInstances {0}; CALC - calculates how many instances of a name was found
  ***************************************************************************/
 const int AR_SIZE {10};
 int main()
@@ -24,7 +26,7 @@ int main()
     printHeading();
 
     std::string names[AR_SIZE];
-    for(size_t i {0}; i < AR_SIZE; i++)
+    for(size_t i {0}; i < AR_SIZE; i++) // This for loop is going to take all ten inputs and store a name in each element
     {
         std::cout << "Enter name #" << i+1 << ": ";
         std::cin >> names[i];
@@ -33,20 +35,20 @@ int main()
     std::string inputName {};
     do
     {
-        int inputNameInstances {0};
         std::cout << "\nWho do you want to search for(enter done to exit)? ";
         std::cin >> inputName;
 
         if(inputName != "done")
         {
+            int inputNameInstances {0};
             for(auto name : names)
-                if(inputName == name)
+                if(inputName == name)//if the input name equals current name in the array then we increment inputNameInstances
                     ++inputNameInstances;
 
-            if(inputNameInstances > 1)
+            if(inputNameInstances > 1)//execption handling on different outputs
                 std::cout << "There are " << inputNameInstances << " instances of the name " << inputName << ".\n";
             else if(inputNameInstances == 1)
-                std::cout << "There are one instance of the name " << inputName << ".\n";
+                std::cout << "There is one instance of the name " << inputName << ".\n";
             else if(inputNameInstances == 0)
                 std::cout << inputName << "'s name does not exist in the list.\n";
         }

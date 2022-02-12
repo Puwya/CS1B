@@ -3,4 +3,4 @@
 #include <string>
 #include <iomanip>
 
-void printHeading();
+void printHeading();//prints heading to the console
