@@ -18,9 +18,17 @@
  *
  * OUTPUT:
  ***************************************************************************/
+const int AR_SIZE {10};
 int main()
 {
     printHeading();
+
+    std::string names[AR_SIZE];
+    for(size_t i {0}; i < AR_SIZE; i++)
+    {
+        std::cout << "Enter name #" << i+1 << ": ";
+        std::cin >> names[i];
+    }
 
     return 0;
 }
