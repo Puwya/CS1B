@@ -23,14 +23,11 @@ int main()
     displayHeader();
     displayInstructions();
 
-    char boardAr[3][3];
-    initBoard(boardAr);
-
+    std::string playerX {"PlayerX"};
+    std::string playerO {"PlayerO"};
     char menuChoice {};
     do
     {
-        std::string playerX {};
-        std::string playerO {};
         std::cout << "Main Menu\na. Exit\nb. Set Player Names\nc. Play in Two Player Mode\nd. Play in One Player Mode\nEnter Choice: ";
         std::cin.get(menuChoice);
         std::cin.ignore(10, '\n');
@@ -43,8 +40,23 @@ int main()
             case 'b':
                 getPlayers(playerX, playerO);
                 break;
-            case 'd':
+            case 'c':
+            {
+                char boardAr[3][3];
+                initBoard(boardAr);
+                char whoWon {};
+                char token {'X'};
+
+                do
+                {
+                    system("clear");
+                    displayBoard(boardAr);
+                    getAndCheckInp(boardAr, token, playerX, playerO);
+                    switchToken(token);
+                } while (whoWon != 't' && whoWon != 'X' && whoWon != 'O');
+                
                 break;
+            }
         }
 
     }while(menuChoice != 'a');
