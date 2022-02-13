@@ -21,4 +21,8 @@
 int main() 
 {
     displayHeader();
+    displayInstructions();
+
+    char boardAr[3][3];
+    initBoard(boardAr);
 }
