@@ -52,9 +52,10 @@ int main()
                     system("clear");
                     displayBoard(boardAr);
                     getAndCheckInp(boardAr, token, playerX, playerO);
+                    whoWon = checkWin(boardAr);
                     switchToken(token);
                 } while (whoWon != 't' && whoWon != 'X' && whoWon != 'O');
-                
+                displayWinner(boardAr, whoWon, playerX, playerO);
                 break;
             }
         }
