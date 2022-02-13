@@ -22,7 +22,7 @@ void displayWinner(const char boardAr[][3], const char &whoWon, const std::strin
             std::cout << "In "<< i << " seconds you will be sent back to the main menu.\n";
             usleep(ONE_SECONDS);
         }
-    }else if(whoWon == 'T')
+    }else if(whoWon == 't')
     {
         for(size_t i {5}; i > 0; i--)
         {
