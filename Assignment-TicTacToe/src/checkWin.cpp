@@ -1,4 +1,4 @@
-#include "main.hpp"
+#include "main.h"
 
 char checkWin(char boardAr[][3])
 {

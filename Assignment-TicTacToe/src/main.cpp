@@ -7,7 +7,7 @@
  * DUE DATE    : 
  ****************************************************************************/
 
-#include "main.hpp"
+#include "main.h"
 
 /****************************************************************************
  * Title:
@@ -46,12 +46,13 @@ int main()
                 initBoard(boardAr);
                 char whoWon {};
                 char token {'X'};
+                std::string difficultyInput {};
 
                 do
                 {
                     system("clear");
                     displayBoard(boardAr);
-                    getAndCheckInp(menuChoice, boardAr, token, playerX, playerO);
+                    getAndCheckInp(difficultyInput, menuChoice, boardAr, token, playerX, playerO);
                     whoWon = checkWin(boardAr);
                     switchToken(token);
                 } while (whoWon != 't' && whoWon != 'X' && whoWon != 'O');
@@ -65,20 +66,17 @@ int main()
                 initBoard(boardAr);
                 char whoWon {};
                 char token {'X'};
-                bool easy {false};
-                bool normal {false};
-                char difficultyInput {};
+                std::string difficultyInput {"Easy"};
 
                 std::cout << "Select what difficultly you want the AI to be!\n";
-                std::cout << "E. Easy\nN. Normal\nH. Hard\nChoice: ";
-                std::cin.ignore(10, '\n');
-                std::cin.get(difficultyInput);
+                std::cout << "Easy\nNormal\nHard\nEnter String: ";
+                std::getline(std::cin, difficultyInput);
 
                 do
                 {
                     system("clear");
                     displayBoard(boardAr);
-                    getAndCheckInp(menuChoice, boardAr, token, playerX, playerO);
+                    getAndCheckInp(difficultyInput, menuChoice, boardAr, token, playerX, playerO);
                     whoWon = checkWin(boardAr);
                     switchToken(token);
                 } while (whoWon != 't' && whoWon != 'X' && whoWon != 'O');

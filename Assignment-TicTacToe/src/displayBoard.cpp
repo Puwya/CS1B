@@ -1,4 +1,4 @@
-#include "main.hpp"
+#include "main.h"
 using namespace std;
 
 void displayBoard(const char boardAr[][3]) 

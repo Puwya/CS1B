@@ -1,6 +1,6 @@
-#include "main.hpp"
+#include "main.h"
 
-void getAndCheckInp(const char menuChoice, char boardAr[][3], const char token, const std::string &playerX, const std::string &playerO)
+void getAndCheckInp(const std::string difficulty, const char menuChoice, char boardAr[][3], const char token, const std::string &playerX, const std::string &playerO)
 {
     int row {};
     int col {};
@@ -19,7 +19,7 @@ void getAndCheckInp(const char menuChoice, char boardAr[][3], const char token, 
             --row;
             --col;
         }else {
-            updatedBoard = checkAIinput(boardAr, token);
+            updatedBoard = checkAiInput(difficulty, boardAr, token);
         }
         
         if(menuChoice != 'd' || token == 'X')

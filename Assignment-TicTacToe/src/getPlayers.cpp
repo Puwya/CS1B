@@ -1,4 +1,4 @@
-#include "main.hpp"
+#include "main.h"
 
 void getPlayers(std::string &playerX, std::string &playerO)
 {

@@ -1,4 +1,4 @@
-#include "main.hpp"
+#include "main.h"
 
 void switchToken(char &token)
 {
