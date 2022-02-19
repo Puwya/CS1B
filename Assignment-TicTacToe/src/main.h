@@ -10,7 +10,7 @@ void displayBoard(const char boardAr[][3]);
 void displayHeader();
 void displayInstructions();
 void initBoard(char boardAr[][3]);
-void setPlayers(std::string &playerX, std::string &playerO);
+void setPlayerNames(std::string &playerX, std::string &playerO);
 void getAndCheckInp(const std::string difficulty, const char menuChoice, char boardAr[][3], const char token, const std::string &playerX, const std::string &playerO);
 void switchToken(char &token);
 char checkWin(char boardAr[][3]);

@@ -40,9 +40,10 @@ int main()
     {
         system("clear");//clear command in the terminal do to wipe every time while loop runs
         displayHeader();
-        displayInstructions();
+        if(ignoreCounter < 1)
+            displayInstructions();
         std::cout << "Main Menu\na. Exit\nb. Set Player Names\nc. Play in Two Player Mode\nd. Play in One Player Mode\nEnter Choice: ";
-        if(ignoreCounter > 0)//if statement to ignore first run of the while loop
+        if(ignoreCounter > 0 && menuChoice != 'b')//if statement to ignore first run of the while loop
             std::cin.ignore(10, '\n');
         std::cin.get(menuChoice);
         std::cin.ignore(10, '\n');
@@ -55,12 +56,12 @@ int main()
                 system("clear");
                 break;
             case 'b':
-                setPlayers(playerX, playerO);
+                setPlayerNames(playerX, playerO);
                 break;
             case 'c':
             {
                 char boardAr[3][3];
-                initBoard(boardAr);
+                initBoard(boardAr);//initialize board to ' '
                 char whoWon {};
                 char token {'X'};
                 std::string difficultyInput {};
@@ -70,10 +71,10 @@ int main()
                     system("clear");
                     displayBoard(boardAr);
                     getAndCheckInp(difficultyInput, menuChoice, boardAr, token, playerX, playerO);
-                    whoWon = checkWin(boardAr);
+                    whoWon = checkWin(boardAr);//check win returns token 
                     switchToken(token);
                 } while (whoWon != 't' && whoWon != 'X' && whoWon != 'O');
-                displayWinner(boardAr, whoWon, playerX, playerO);
+                displayWinner(boardAr, whoWon, playerX, playerO);//display winner
                 break;
             }
             case 'd':
