@@ -71,7 +71,7 @@ int main()
                     system("clear");
                     displayBoard(boardAr);
                     getAndCheckInp(difficultyInput, menuChoice, boardAr, token, playerX, playerO);
-                    whoWon = checkWin(boardAr);//check win returns token 
+                    whoWon = winLogic(boardAr);//check win returns token 
                     switchToken(token);
                 } while (whoWon != 't' && whoWon != 'X' && whoWon != 'O');
                 displayWinner(boardAr, whoWon, playerX, playerO);//display winner
@@ -95,7 +95,7 @@ int main()
                     system("clear");
                     displayBoard(boardAr);
                     getAndCheckInp(difficultyInput, menuChoice, boardAr, token, playerX, playerO);
-                    whoWon = checkWin(boardAr);
+                    whoWon = winLogic(boardAr);
                     switchToken(token);
                 } while (whoWon != 't' && whoWon != 'X' && whoWon != 'O');
                 displayWinner(boardAr, whoWon, playerX, playerO);
@@ -104,4 +104,5 @@ int main()
         }
         ++ignoreCounter;
     }while(menuChoice != 'a');
+    return 0;
 }

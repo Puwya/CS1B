@@ -1,6 +1,16 @@
+/****************************************************************************
+ * Title: hardAiBlocking
+ * --------------------------------------------------------------------------
+ * Function:
+ *  Blocks any possible win conditions that player X has
+ * --------------------------------------------------------------------------
+ * No Data Table
+ * ----------
+ ***************************************************************************/
+
 #include "main.h"
 
-bool hardAi(char boardAr[][3], const char token)
+bool hardAiBlocking(char boardAr[][3], const char token)
 {
     if(boardAr[0][0] == 'X' && boardAr[0][2] == 'X' && boardAr[0][1] != 'O') {
         thinking(boardAr);

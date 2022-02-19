@@ -1,6 +1,17 @@
+/****************************************************************************
+ * Title: normalWinConditionsAi
+ * --------------------------------------------------------------------------
+ * Function:
+ *  this function checks to see if there is a possible win condition for Ai
+ *  and if there is then acts on it, normal only does some win possible
+ *  win conditions
+ * --------------------------------------------------------------------------
+ * No Data Table
+ * ----------
+ ***************************************************************************/
 #include "main.h"
 
-bool winningNormalAi(char boardAr[][3], const char token)
+bool normalWinConditionsAi(char boardAr[][3], const char token)
 {
     if(boardAr[0][0] == 'O' && boardAr[0][1] == 'O' && boardAr[0][2] != 'X') {
         thinking(boardAr);

@@ -1,6 +1,18 @@
+/****************************************************************************
+ * Title: hardWinConditionsAi
+ * --------------------------------------------------------------------------
+ * Function:
+ *  This function with the addition of normalWinConditionsAi have every
+ *  possible win condition hard coded to be able to make that move and win
+ *  the game
+ * --------------------------------------------------------------------------
+ * No Data Table
+ * ----------
+ ***************************************************************************/
+
 #include "main.h"
 
-bool winningHardAi(char boardAr[][3], const char token)
+bool hardWinConditionsAi(char boardAr[][3], const char token)
 {
     if(boardAr[0][0] == 'O' && boardAr[0][2] == 'O' && boardAr[0][1] != 'X') {
         thinking(boardAr);

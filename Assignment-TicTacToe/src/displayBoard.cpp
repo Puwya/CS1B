@@ -1,3 +1,21 @@
+/****************************************************************************
+ * Title: displayBoard
+ * --------------------------------------------------------------------------
+ * function displays updated board 
+ * outer for loop is in charge of displaying this ->
+ *    [1][1] | [1][2] | [1][3]
+ *           |        |        
+ * & and controls when this line gets displayed (only twice)
+ *    --------------------------  
+ * & also changing the values
+ * 
+ * inner for loop controls ->
+ *  1        |         |            
+ * --------------------------------------------------------------------------
+ * No Data Table
+ * ----------
+ ***************************************************************************/
+
 #include "main.h"
 using namespace std;
 

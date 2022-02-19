@@ -1,3 +1,14 @@
+/****************************************************************************
+ * Title: Display Winner
+ * --------------------------------------------------------------------------
+ * Function:
+ *  This function takes player that won or takes a condition if it was
+ *  a tie game and outputs the results accoordingly
+ * --------------------------------------------------------------------------
+ * Data Table
+ * ----------
+ ***************************************************************************/
+
 #include "main.h"
 
 void displayWinner(const char boardAr[][3], const char &whoWon, const std::string &playerX, const std::string &playerO)

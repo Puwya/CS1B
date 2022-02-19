@@ -1,3 +1,12 @@
+/****************************************************************************
+ * Title: Initialize Board
+ * --------------------------------------------------------------------------
+ * This function initializes board to spaces it has a nested for loop
+ * & it assigns every position in the 2D array to a space
+ * --------------------------------------------------------------------------
+ * No Data Table
+ * ----------
+ ***************************************************************************/
 #include "main.h"
 
 void initBoard(char boardAr[][3])

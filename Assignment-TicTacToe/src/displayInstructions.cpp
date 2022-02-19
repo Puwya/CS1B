@@ -1,3 +1,13 @@
+/****************************************************************************
+ * Title: displayInstructions
+ * --------------------------------------------------------------------------
+ * This function displays the instructions to the player or players 
+ * returns nothing
+ * --------------------------------------------------------------------------
+ * No Data Table
+ * ----------
+ ***************************************************************************/
+
 #include "main.h"
 
 void displayInstructions()
@@ -5,7 +15,7 @@ void displayInstructions()
     std::cout << "[Tic Tac Toe]\n";
     std::cout << "<Instructions>\n";
     std::cout << "<p>\nWhen selecting the option to set a name "
-              << "playerX is the first to go & and is given token 'X'.\n"
+              << "playerX is the first to go & is given token 'X'.\n"
               << "If set names option is not selected then default names will take place.\n</p>\n";
     std::cout << "<p>\n"
 <<"                                      How to Play EX. 1                                             \n"
@@ -29,6 +39,7 @@ void displayInstructions()
 <<"\nPlayerX's turn! What's your play? 2 2                       " <<"PlayerO's turn! What's your play?_ _\n\n\n\n"
 
 <<"                                     How not to Play EX. 2                                         \n "
+<<"                                                             Spot is taken on the board! Retry     \n "
 <<"         1       2       3                                    " <<"         1       2       3      \n "
 <<"      [1][1] | [1][2] | [1][3]                                " <<"      [1][1] | [1][2] | [1][3]  \n " 
 <<"             |        |                                       " <<"             |        |         \n " 

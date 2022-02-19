@@ -1,3 +1,15 @@
+/****************************************************************************
+ * Title: Check Ai Input
+ * --------------------------------------------------------------------------
+ * Function:
+ *  This function takes difficulty and using that logic delegates proper
+ *  functions to handle certain difficulty
+ * --------------------------------------------------------------------------
+ * Data Table
+ * ----------
+ * 
+ ***************************************************************************/
+
 #include "main.h"
 #include <time.h>
 #include <stdlib.h>
@@ -10,21 +22,21 @@ bool checkAiInput(const std::string difficulty, char boardAr[][3], const char to
         return easyAi(boardAr, token);
     }
     else if(difficulty == "Normal") {
-        if(winningNormalAi(boardAr, token))
+        if(normalWinConditionsAi(boardAr, token))
             return true;
-        else if(normalAi(boardAr, token))
+        else if(normalAiBlocking(boardAr, token))
             return true;
         else
             return easyAi(boardAr, token);
     }
     else if(difficulty == "Hard") {
-        if(winningHardAi(boardAr, token))
+        if(hardWinConditionsAi(boardAr, token))
             return true;
-        else if(winningNormalAi(boardAr, token))
+        else if(normalWinConditionsAi(boardAr, token))
             return true;
-        else if(hardAi(boardAr, token))
+        else if(hardAiBlocking(boardAr, token))
             return true;
-        else if(normalAi(boardAr, token))
+        else if(normalAiBlocking(boardAr, token))
             return true;
         else
             return easyAi(boardAr, token);
