@@ -10,7 +10,7 @@ void displayWinner(const char boardAr[][3], const char &whoWon, const std::strin
             displayBoard(boardAr);
             std::cout << "Congratulations " << playerX << " for winning!!!\n";
             std::cout << "In "<< i << " seconds you will be sent back to the main menu.\n";
-            usleep(ONE_SECONDS);
+            usleep(ONE_SECOND);
         }
     }else if(whoWon == 'O') 
     {
@@ -20,7 +20,7 @@ void displayWinner(const char boardAr[][3], const char &whoWon, const std::strin
             displayBoard(boardAr);
             std::cout << "Congratulations " << playerO << " for winning!!!\n";
             std::cout << "In "<< i << " seconds you will be sent back to the main menu.\n";
-            usleep(ONE_SECONDS);
+            usleep(ONE_SECOND);
         }
     }else if(whoWon == 't')
     {
@@ -30,7 +30,7 @@ void displayWinner(const char boardAr[][3], const char &whoWon, const std::strin
             displayBoard(boardAr);
             std::cout << "TIE Game " << playerX << " & " << playerO << " Goodluck next time!!!\n";
             std::cout << "In "<< i << " seconds you will be sent back to the main menu.\n";
-            usleep(ONE_SECONDS);
+            usleep(ONE_SECOND);
         }
     }
 }

@@ -1,6 +1,6 @@
 #include "main.h"
 
-void getPlayers(std::string &playerX, std::string &playerO)
+void setPlayers(std::string &playerX, std::string &playerO)
 {
     std::cout << "Enter name for player with token X: ";
     std::getline(std::cin, playerX);
