@@ -41,12 +41,19 @@ void getAndCheckInp(const std::string difficulty, const char onePlayerDeterminer
         
         if(onePlayerDeterminer != 'd' || token == 'X')//if one player mode is active than only on token X will this control flow statement run
         {
-            if(isspace(boardAr[row][col])) {//if current element in the 2d array is taken by a space then its available
-                boardAr[row][col] = token;
-                updatedBoard = true;
-            }else {//if its taken by token O or X than its taken
+            if(row < 3 && row > -1 && col < 3 && col > -1)
+            {
+                if(isspace(boardAr[row][col])) {//if current element in the 2d array is taken by a space then its available
+                    boardAr[row][col] = token;
+                    updatedBoard = true;
+                }else {//if its taken by token O or X than its taken
+                    system("clear");
+                    std::cout << "Spot is taken on the board! Retry.\n";
+                    displayBoard(boardAr);
+                }
+            }else{
                 system("clear");
-                std::cout << "Spot is taken on the board! Retry.\n";
+                std::cout << "Invalid Row and Col\n";
                 displayBoard(boardAr);
             }
         }

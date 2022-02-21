@@ -4,7 +4,7 @@
 #include <string>
 #include <unistd.h>
 
-const unsigned int ONE_SECOND {1000000};
+const unsigned int ONE_SECOND {1000000}; 
 
 void displayBoard(const char boardAr[][3]);//displays TicTacToe board when called returns nothing
 void displayHeader();//displays class header
