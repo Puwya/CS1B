@@ -1,5 +1,5 @@
-CMakeFiles/hello.dir/src/main.cpp.o: \
-  /Users/Dev/C++Projects/CS1B/Lab-BinarySearch/src/main.cpp \
+CMakeFiles/main.dir/src/squentialSearch.cpp.o: \
+  /Users/Dev/C++Projects/CS1B/Lab-BinarySearch/src/squentialSearch.cpp \
   /Users/Dev/C++Projects/CS1B/Lab-BinarySearch/src/../include/main.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__config \

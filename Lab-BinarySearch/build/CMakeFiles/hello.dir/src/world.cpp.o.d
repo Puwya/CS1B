@@ -1,5 +1,5 @@
-CMakeFiles/hello.dir/src/main.cpp.o: \
-  /Users/Dev/C++Projects/CS1B/Lab-BinarySearch/src/main.cpp \
+CMakeFiles/hello.dir/src/world.cpp.o: \
+  /Users/Dev/C++Projects/CS1B/Lab-BinarySearch/src/world.cpp \
   /Users/Dev/C++Projects/CS1B/Lab-BinarySearch/src/../include/main.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__config \
@@ -224,5 +224,4 @@ CMakeFiles/hello.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/bitset \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__bit_reference \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/iomanip
+  /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__bit_reference

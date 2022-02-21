@@ -117,24 +117,144 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named hello
+# Target rules for targets named main
 
 # Build rule for target.
-hello: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello
-.PHONY : hello
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-hello/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/build
-.PHONY : hello/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+src/binarySearch.o: src/binarySearch.cpp.o
+.PHONY : src/binarySearch.o
+
+# target to build an object file
+src/binarySearch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/binarySearch.cpp.o
+.PHONY : src/binarySearch.cpp.o
+
+src/binarySearch.i: src/binarySearch.cpp.i
+.PHONY : src/binarySearch.i
+
+# target to preprocess a source file
+src/binarySearch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/binarySearch.cpp.i
+.PHONY : src/binarySearch.cpp.i
+
+src/binarySearch.s: src/binarySearch.cpp.s
+.PHONY : src/binarySearch.s
+
+# target to generate assembly for a file
+src/binarySearch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/binarySearch.cpp.s
+.PHONY : src/binarySearch.cpp.s
+
+src/displayHeader.o: src/displayHeader.cpp.o
+.PHONY : src/displayHeader.o
+
+# target to build an object file
+src/displayHeader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/displayHeader.cpp.o
+.PHONY : src/displayHeader.cpp.o
+
+src/displayHeader.i: src/displayHeader.cpp.i
+.PHONY : src/displayHeader.i
+
+# target to preprocess a source file
+src/displayHeader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/displayHeader.cpp.i
+.PHONY : src/displayHeader.cpp.i
+
+src/displayHeader.s: src/displayHeader.cpp.s
+.PHONY : src/displayHeader.s
+
+# target to generate assembly for a file
+src/displayHeader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/displayHeader.cpp.s
+.PHONY : src/displayHeader.cpp.s
+
+src/handleOutput.o: src/handleOutput.cpp.o
+.PHONY : src/handleOutput.o
+
+# target to build an object file
+src/handleOutput.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/handleOutput.cpp.o
+.PHONY : src/handleOutput.cpp.o
+
+src/handleOutput.i: src/handleOutput.cpp.i
+.PHONY : src/handleOutput.i
+
+# target to preprocess a source file
+src/handleOutput.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/handleOutput.cpp.i
+.PHONY : src/handleOutput.cpp.i
+
+src/handleOutput.s: src/handleOutput.cpp.s
+.PHONY : src/handleOutput.s
+
+# target to generate assembly for a file
+src/handleOutput.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/handleOutput.cpp.s
+.PHONY : src/handleOutput.cpp.s
+
+src/initArray.o: src/initArray.cpp.o
+.PHONY : src/initArray.o
+
+# target to build an object file
+src/initArray.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/initArray.cpp.o
+.PHONY : src/initArray.cpp.o
+
+src/initArray.i: src/initArray.cpp.i
+.PHONY : src/initArray.i
+
+# target to preprocess a source file
+src/initArray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/initArray.cpp.i
+.PHONY : src/initArray.cpp.i
+
+src/initArray.s: src/initArray.cpp.s
+.PHONY : src/initArray.s
+
+# target to generate assembly for a file
+src/initArray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/initArray.cpp.s
+.PHONY : src/initArray.cpp.s
+
+src/insertionSort.o: src/insertionSort.cpp.o
+.PHONY : src/insertionSort.o
+
+# target to build an object file
+src/insertionSort.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/insertionSort.cpp.o
+.PHONY : src/insertionSort.cpp.o
+
+src/insertionSort.i: src/insertionSort.cpp.i
+.PHONY : src/insertionSort.i
+
+# target to preprocess a source file
+src/insertionSort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/insertionSort.cpp.i
+.PHONY : src/insertionSort.cpp.i
+
+src/insertionSort.s: src/insertionSort.cpp.s
+.PHONY : src/insertionSort.s
+
+# target to generate assembly for a file
+src/insertionSort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/insertionSort.cpp.s
+.PHONY : src/insertionSort.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -142,7 +262,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -150,8 +270,32 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hello.dir/build.make CMakeFiles/hello.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/squentialSearch.o: src/squentialSearch.cpp.o
+.PHONY : src/squentialSearch.o
+
+# target to build an object file
+src/squentialSearch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/squentialSearch.cpp.o
+.PHONY : src/squentialSearch.cpp.o
+
+src/squentialSearch.i: src/squentialSearch.cpp.i
+.PHONY : src/squentialSearch.i
+
+# target to preprocess a source file
+src/squentialSearch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/squentialSearch.cpp.i
+.PHONY : src/squentialSearch.cpp.i
+
+src/squentialSearch.s: src/squentialSearch.cpp.s
+.PHONY : src/squentialSearch.s
+
+# target to generate assembly for a file
+src/squentialSearch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/squentialSearch.cpp.s
+.PHONY : src/squentialSearch.cpp.s
 
 # Help Target
 help:
@@ -161,10 +305,28 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... hello"
+	@echo "... main"
+	@echo "... src/binarySearch.o"
+	@echo "... src/binarySearch.i"
+	@echo "... src/binarySearch.s"
+	@echo "... src/displayHeader.o"
+	@echo "... src/displayHeader.i"
+	@echo "... src/displayHeader.s"
+	@echo "... src/handleOutput.o"
+	@echo "... src/handleOutput.i"
+	@echo "... src/handleOutput.s"
+	@echo "... src/initArray.o"
+	@echo "... src/initArray.i"
+	@echo "... src/initArray.s"
+	@echo "... src/insertionSort.o"
+	@echo "... src/insertionSort.i"
+	@echo "... src/insertionSort.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/squentialSearch.o"
+	@echo "... src/squentialSearch.i"
+	@echo "... src/squentialSearch.s"
 .PHONY : help
 
 

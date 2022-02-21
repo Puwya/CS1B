@@ -8,8 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/Dev/C++Projects/CS1B/Lab-BinarySearch/src/displayHeader.cpp" "CMakeFiles/hello.dir/src/displayHeader.cpp.o" "gcc" "CMakeFiles/hello.dir/src/displayHeader.cpp.o.d"
-  "/Users/Dev/C++Projects/CS1B/Lab-BinarySearch/src/main.cpp" "CMakeFiles/hello.dir/src/main.cpp.o" "gcc" "CMakeFiles/hello.dir/src/main.cpp.o.d"
+  "/Users/Dev/C++Projects/CS1B/Lab-BinarySearch/world/world.cpp" "CMakeFiles/world.dir/world/world.cpp.o" "gcc" "CMakeFiles/world.dir/world/world.cpp.o.d"
   )
 
 # Targets to which this target links.
