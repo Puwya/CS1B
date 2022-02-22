@@ -1,4 +1,4 @@
-#include "main.hpp"
+#include "../include/main.hpp"
 
 size_t averageLogic(const size_t &totalHeadCount, const size_t &totalFlipCount)
 {

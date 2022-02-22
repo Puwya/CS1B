@@ -1,4 +1,4 @@
-#include "main.hpp"
+#include "../include/main.hpp"
 
 void outputResults(const size_t &totalFlipCount, size_t averageHeadFlip)
 {
