@@ -1,4 +1,15 @@
 #include "main.hpp"
+/****************************************************************************
+ * Title: balanceIndex
+ * --------------------------------------------------------------------------
+ * FUNCTION:
+ * 	Handles both larger and smaller balances and returns the index that it
+ * 	found
+ * --------------------------------------------------------------------------
+ * Data Table
+ * ----------
+ * double balance CALC - used to calc current largest or smallest balance
+ ***************************************************************************/
 
 int balanceIndex(char selection, size_t sizeofArray, Account arrayofAccounts[])
 {

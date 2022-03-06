@@ -1,4 +1,14 @@
 #include "main.hpp"
+/****************************************************************************
+ * Title: sumofBalances
+ * --------------------------------------------------------------------------
+ * FUNCTION:
+ * 	sums all balances in the array and returns it
+ * --------------------------------------------------------------------------
+ * Data Table
+ * ----------
+ * double balanceSum CALC - calcs balances sum
+ ***************************************************************************/
 
 double sumofBalances(size_t sizeofArray, Account arrayofAccounts[])
 {

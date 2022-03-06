@@ -1,4 +1,13 @@
 #include "main.hpp"
+/****************************************************************************
+ * Title: searchName 
+ * --------------------------------------------------------------------------
+ * FUNCTION:
+ *  handles name search from user and if name was not found returns -1
+ * --------------------------------------------------------------------------
+ * No Data Table
+ * ----------
+ ***************************************************************************/
 
 int searchName(std::string inputName, size_t sizeofArray, Account arrayofAccounts[])
 {

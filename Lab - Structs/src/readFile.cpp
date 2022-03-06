@@ -1,4 +1,14 @@
 #include "main.hpp"
+/****************************************************************************
+ * Title: readFile
+ * --------------------------------------------------------------------------
+ * FUNCTION:
+ * 	Reads from file and stores data in an array of accounts 
+ * --------------------------------------------------------------------------
+ * Data Table
+ * ----------
+ * std::string fname, lname CALC - reads first name and last name 
+ ***************************************************************************/
 
 void readFile(std::string inputFileName, size_t sizeofArray, Account arrayofAccounts[])//reads file and sets values in the arrays
 {

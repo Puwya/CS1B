@@ -1,4 +1,13 @@
 #include "main.hpp"
+/****************************************************************************
+ * Title: handleOutput
+ * --------------------------------------------------------------------------
+ * FUNCTION:
+ *  handles output of balances 
+ * --------------------------------------------------------------------------
+ * No Data Table
+ * ----------
+ ***************************************************************************/
 
 void handleOutput(int index, std::string type, std::fstream &outFile, const char selection, const size_t sizeofArray, Account arrayofAccounts[])
 {

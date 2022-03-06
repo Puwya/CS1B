@@ -68,71 +68,17 @@ Enter an option (0 to exit): 5
 
 Who do you want to search for (enter done to exit): Steve Woolston
 Found.
-
-Menu Options
-
-1 - Find the larger balance
-2 - Find the smaller balance
-3 - Obtain the sum of all balances
-4 - Obtain the average of all balances
-5 - Find Person
-0 - Exit
-Enter an option (0 to exit): 5
-
 Who do you want to search for (enter done to exit): Jacques Rousseau
 Jacques Rousseau was not found.
-
-Menu Options
-
-1 - Find the larger balance
-2 - Find the smaller balance
-3 - Obtain the sum of all balances
-4 - Obtain the average of all balances
-5 - Find Person
-0 - Exit
-Enter an option (0 to exit): 5
-
 Who do you want to search for (enter done to exit): Chris Carroll
 Found.
-
-Menu Options
-
-1 - Find the larger balance
-2 - Find the smaller balance
-3 - Obtain the sum of all balances
-4 - Obtain the average of all balances
-5 - Find Person
-0 - Exit
-Enter an option (0 to exit): 5
-
-Who do you want to search for (enter done to exit): Pete McBride
+Who do you want to search for (enter done to exit): Lisa Covi
 Found.
-
-Menu Options
-
-1 - Find the larger balance
-2 - Find the smaller balance
-3 - Obtain the sum of all balances
-4 - Obtain the average of all balances
-5 - Find Person
-0 - Exit
-Enter an option (0 to exit): 5
-
-Who do you want to search for (enter done to exit): Jean Rousseau
+Who do you want to search for (enter done to exit): Florence Rousseau
 Found.
-
-Menu Options
-
-1 - Find the larger balance
-2 - Find the smaller balance
-3 - Obtain the sum of all balances
-4 - Obtain the average of all balances
-5 - Find Person
-0 - Exit
-Enter an option (0 to exit): 5
-
-Who do you want to search for (enter done to exit): Florence Cyr
-Florence Cyr was not found.
+Who do you want to search for (enter done to exit): Frankie Lane
+Frankie Lane was not found.
+Who do you want to search for (enter done to exit): done
 
 Menu Options
 

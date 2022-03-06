@@ -8,20 +8,22 @@
  ****************************************************************************/
 
 #include "main.hpp"
-
 /****************************************************************************
  * Title: Functions & Arrays
  * --------------------------------------------------------------------------
- * This program will output the class heading
+ * FUNCTION:
+ *  handles output of searches
  * --------------------------------------------------------------------------
- * INPUT:
- * inputFileName {file name for input}
- * outputFileName {file name for output}
- * selection {char for switch case condition}
- * inputName {name input to search for from user}
- * inFile {read from input file}
- * OUTPUT:
- * outFile {output to file}
+ * Data Table
+ * ----------
+ * char selection IN & CALC - char for switch case condition
+ * std::string inputFileName IN & CALC - file name for input
+ * std::string outputFileName IN & CALC - file name for output
+ * std::string inputName IN & CALC - name input to search for from user
+ * std::fstream inFile CALC - read from input file
+ * std::fstream outFile CALC - output to file
+ * size_t sizeofArray CALC - size of the array
+ * Account arrayofAccounts[] CALC - array of Accounts
  ***************************************************************************/
 
 int main()
@@ -35,17 +37,13 @@ int main()
 	std::cin >> outputFileName; // reads input for what file to write to
 
 	size_t sizeofArray {0};
-	std::string line {};
 	std::fstream inFile;
 	inFile.open(inputFileName, std::ios::in); //file is in read only mode
-	while(std::getline(inFile, line))//stores line in temporary string
+	while(std::getline(inFile, temp))//stores line in temporary string
 		++sizeofArray;// a loop that gets the number of lines in the file
 	sizeofArray /= 2;// works for the type of formatting that the input file has if format changes then bugs could occur
 	inFile.close();
 
-	std::string arrayofNames[sizeofArray];
-	int arrayofIDs[sizeofArray];
-	double arrayofBalances[sizeofArray];
 	Account arrayofAccounts[sizeofArray];
 
 	readFile(inputFileName, sizeofArray, arrayofAccounts);//reads file and sets values in the arrays
@@ -98,19 +96,24 @@ int main()
 			}
 			case '5': {
 				std::string inputName {};
-				std::cout << "Who do you want to search for (enter done to exit): ";
+				int index {};
 				std::cin.ignore(10, '\n');
-				std::getline(std::cin, inputName);
+				do
+				{
+					std::cout << "Who do you want to search for (enter done to exit): ";
+					std::getline(std::cin, inputName);
 
-				if(inputName == "done")//expection handling for when user enters done
-					continue;
-				else if(searchName(inputName, sizeofArray, arrayofAccounts) != -1) {// function returns a -1 if not found and if found returns index that it was found in
-					std::cout << "Found.\n";
-					std::string type {"Search"};
-					int index {searchName(inputName, sizeofArray, arrayofAccounts)};
-					handleOutput(index, type, outFile, selection, sizeofArray, arrayofAccounts);
-				}else
-					std::cout << inputName << " was not found.\n";//handling not found
+					if(inputName == "done") { //expection handling for when user enters done
+						handleSearchOutput(inputName, index, outFile, arrayofAccounts);
+						continue;
+					}
+					else if((index = searchName(inputName, sizeofArray, arrayofAccounts)) != -1) {// function returns a -1 if not found and if found returns index that it was found in
+						std::cout << "Found.\n";
+						handleSearchOutput(inputName, index, outFile, arrayofAccounts);
+					}else
+						std::cout << inputName << " was not found.\n";//handling not found
+				} while (inputName != "done");
+				
 				break;
 			}
 			case '0': {
