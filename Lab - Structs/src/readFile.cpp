@@ -1,6 +1,6 @@
 #include "main.hpp"
 
-void readFile(std::string inputFileName, size_t sizeofArray, std::string arrayofNames[], int arrayofIDs[], double arrayofBalances[])
+void readFile(std::string inputFileName, size_t sizeofArray, Account arrayofAccounts[])//reads file and sets values in the arrays
 {
 	std::string fname{}, lname{};
 	std::fstream inFile;
@@ -8,8 +8,8 @@ void readFile(std::string inputFileName, size_t sizeofArray, std::string arrayof
 	for (size_t i{0}; i < sizeofArray; i++)
 	{
 		inFile >> fname >> lname;					   // wanted to use getline but then thought this could be less error prone
-		arrayofNames[i] = fname + ' ' + lname;		   // concat fname and lname and assigning it to array names at index i
-		inFile >> arrayofIDs[i] >> arrayofBalances[i]; // reading id and balance
+		arrayofAccounts[i].userName = fname + ' ' + lname;		   // concat fname and lname and assigning it to array names at index i
+		inFile >> arrayofAccounts[i].userID >> arrayofAccounts[i].userBalance; // reading id and balance
 	}
 	inFile.close();
 }

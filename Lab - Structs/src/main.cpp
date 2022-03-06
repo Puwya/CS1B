@@ -35,9 +35,10 @@ int main()
 	std::cin >> outputFileName; // reads input for what file to write to
 
 	size_t sizeofArray {0};
+	std::string line {};
 	std::fstream inFile;
 	inFile.open(inputFileName, std::ios::in); //file is in read only mode
-	while(inFile)//stores line in temporary string
+	while(std::getline(inFile, line))//stores line in temporary string
 		++sizeofArray;// a loop that gets the number of lines in the file
 	sizeofArray /= 2;// works for the type of formatting that the input file has if format changes then bugs could occur
 	inFile.close();
@@ -45,10 +46,13 @@ int main()
 	std::string arrayofNames[sizeofArray];
 	int arrayofIDs[sizeofArray];
 	double arrayofBalances[sizeofArray];
+	Account arrayofAccounts[sizeofArray];
 
-	readFile(inputFileName, sizeofArray, arrayofNames, arrayofIDs, arrayofBalances);//reads file and sets values in the arrays
+	readFile(inputFileName, sizeofArray, arrayofAccounts);//reads file and sets values in the arrays
 
 	char selection {};
+	std::fstream outFile;
+	outFile.open(outputFileName, std::ios::app);//appends to file and doesn't erase but adds instead
 	do
 	{
 		std::cout << "\nMenu Options\n\n"
@@ -66,52 +70,30 @@ int main()
 		{
 			case '1': {
 				std::cout << "Finding the Larger Balance...\n";
-				
-				std::fstream outFile;
-				outFile.open(outputFileName, std::ios::app);//appends to file and doesn't erase but adds instead
-				outFile << "Larger Balance:\n";
-				outFile << "ID #     NAME                     BALANCE DUE\n";
-				outFile << "----     --------------------     -----------\n";
-				outFile << arrayofIDs[balanceIndex(selection, sizeofArray, arrayofBalances)] << "     ";//returns an index for the largest balance in the input file
-				outFile << arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)];
-				outFile << std::setw(26 - arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)].size());//returns the size of the largest balance name and subtracts a set width of 26 to get proper format
-				outFile << "$" << std::setw(10) << arrayofBalances[balanceIndex(selection, sizeofArray, arrayofBalances)] << "\n\n";
-				outFile.close();
+				std::string type {"Larger"};
+				int index {balanceIndex(selection, sizeofArray, arrayofAccounts)};
+				handleOutput(index, type, outFile, selection, sizeofArray, arrayofAccounts);
 				break;
 			}
 			case '2': {
 				std::cout << "Finding the Smaller Balance...\n";
-
-				std::fstream outFile;
-				outFile.open(outputFileName, std::ios::app);
-				outFile << "Smaller Balance:\n";
-				outFile << "ID #     NAME                     BALANCE DUE\n";
-				outFile << "----     --------------------     -----------\n";
-				outFile << arrayofIDs[balanceIndex(selection, sizeofArray, arrayofBalances)] << "     ";
-				outFile << arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)]; 
-				outFile << std::setw(26 - arrayofNames[balanceIndex(selection, sizeofArray, arrayofBalances)].size());
-				outFile << "$" << std::setw(10) << arrayofBalances[balanceIndex(selection, sizeofArray, arrayofBalances)] << "\n\n";
-				outFile.close();
+				std::string type {"Smaller"};
+				int index {balanceIndex(selection, sizeofArray, arrayofAccounts)};
+				handleOutput(index, type, outFile, selection, sizeofArray, arrayofAccounts);
 				break;
 			}
 			case '3': {
 				std::cout << "Obtaining the sum of all Balances...\n";
 
-				std::fstream outFile;
-				outFile.open(outputFileName, std::ios::app);
 				outFile << "Sum of Balance for all persons:\n";
-				outFile << std::fixed << std::setprecision(2) << "$" << std::setw(10) << sumofBalances(sizeofArray, arrayofBalances) << "\n\n";//returns sum of balances
-				outFile.close();
+				outFile << std::fixed << std::setprecision(2) << "$" << std::setw(10) << sumofBalances(sizeofArray, arrayofAccounts) << "\n\n";//returns sum of balances
 				break;
 			}
 			case '4': {
 				std::cout << "Obtaining the average of all Balances...\n";
 
-				std::fstream outFile;
-				outFile.open(outputFileName, std::ios::app);
 				outFile << "Average Balance for all persons:\n";
-				outFile << std::fixed << std::setprecision(2) << "$" << std::setw(10) << sumofBalances(sizeofArray, arrayofBalances)/sizeofArray << "\n\n";//returns average of balances using the size of array or how many IDs we have
-				outFile.close();
+				outFile << std::fixed << std::setprecision(2) << "$" << std::setw(10) << sumofBalances(sizeofArray, arrayofAccounts)/sizeofArray << "\n\n";//returns average of balances using the size of array or how many IDs we have
 				break;
 			}
 			case '5': {
@@ -122,19 +104,11 @@ int main()
 
 				if(inputName == "done")//expection handling for when user enters done
 					continue;
-				else if(searchName(inputName, sizeofArray, arrayofNames) != -1) {// function returns a -1 if not found and if found returns index that it was found in
+				else if(searchName(inputName, sizeofArray, arrayofAccounts) != -1) {// function returns a -1 if not found and if found returns index that it was found in
 					std::cout << "Found.\n";
-
-					std::fstream outFile;
-					outFile.open(outputFileName, std::ios::app);
-					outFile << "Search Name:\n";
-					outFile << "ID #     NAME                     BALANCE DUE\n";
-					outFile << "----     --------------------     -----------\n";
-					outFile << arrayofIDs[searchName(inputName, sizeofArray, arrayofNames)] << "     ";
-					outFile << arrayofNames[searchName(inputName, sizeofArray, arrayofNames)];
-					outFile << std::setw(26 - arrayofNames[searchName(inputName, sizeofArray, arrayofNames)].size());
-					outFile << "$" << std::setw(10) << arrayofBalances[searchName(inputName, sizeofArray, arrayofNames)] << "\n\n";
-					outFile.close();
+					std::string type {"Search"};
+					int index {searchName(inputName, sizeofArray, arrayofAccounts)};
+					handleOutput(index, type, outFile, selection, sizeofArray, arrayofAccounts);
 				}else
 					std::cout << inputName << " was not found.\n";//handling not found
 				break;
@@ -149,5 +123,6 @@ int main()
 			}
 		}
 	} while (selection != '0');
-	
+	outFile.close();
+	return 0;
 }
