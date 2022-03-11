@@ -15,8 +15,8 @@ void heading() {
 	const char PROGRAMMER[] = "Carlos Aguilera";
 	const char CLASS[]      = "CS1B";
 	const char SECTION[]    = "MW: 7:30p - 9:50p";
-	const int LAB_NUM       = 1;
-	const char LAB_NAME[]   = "";
+	const int LAB_NUM       = 7;
+	const char LAB_NAME[]   = "Testing";
 
 	// (variable declerations go here)
 
