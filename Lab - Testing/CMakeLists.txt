@@ -3,4 +3,5 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON) 
 
 project(main)
-add_executable(main src/main.cpp)
+add_executable(main src/main.cpp src/dataInput.cpp src/heading.cpp)
+target_include_directories(main PUBLIC include/)
