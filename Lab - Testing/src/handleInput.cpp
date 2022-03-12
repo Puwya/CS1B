@@ -2,6 +2,7 @@
 
 void handleInput(size_t &numOfSheeps, size_t &numOfChocolateBars) {
    bool inputValidated = false;
+   std::cout << "\n";
    do {
       try {
          std::cout << "Enter number of Sheep: ";
@@ -22,8 +23,6 @@ void handleInput(size_t &numOfSheeps, size_t &numOfChocolateBars) {
       }
       catch(bool invalid) {
          std::cout << "Input was invalid try again!!\n";
-         usleep(2000000);
-         system("clear");
       }
    }while(!inputValidated);
 }

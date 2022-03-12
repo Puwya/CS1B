@@ -4,5 +4,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_BUILD_TYPE Debug)
 
 project(main)
-add_executable(main src/main.cpp src/dataInput.cpp src/heading.cpp)
+add_executable(main src/main.cpp src/handleInput.cpp src/heading.cpp src/handleCalc.cpp src/handleOutput.cpp)
 target_include_directories(main PUBLIC include/)

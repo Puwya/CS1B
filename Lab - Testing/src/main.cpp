@@ -11,8 +11,13 @@
 
 int main() {
    heading();
+
    size_t numOfSheeps {};
    size_t numOfChocolateBars {};
-   handleInput(numOfSheeps, numOfChocolateBars);
 
+   for (size_t i {0}; i < 3; i++) {
+      handleInput(numOfSheeps, numOfChocolateBars);
+      handleCalc(numOfSheeps, numOfChocolateBars);
+   }
+   return 0;
 }
