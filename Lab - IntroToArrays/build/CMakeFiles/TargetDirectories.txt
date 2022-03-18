@@ -1,3 +1,0 @@
-/Users/Dev/C++Projects/CS1B/Lab - IntroToArrays/build/CMakeFiles/main.dir
-/Users/Dev/C++Projects/CS1B/Lab - IntroToArrays/build/CMakeFiles/edit_cache.dir
-/Users/Dev/C++Projects/CS1B/Lab - IntroToArrays/build/CMakeFiles/rebuild_cache.dir
