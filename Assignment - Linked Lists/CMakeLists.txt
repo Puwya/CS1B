@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_BUILD_TYPE debug)
 
 project(main)
-add_executable(main src/main.cpp)
+add_executable(main src/main.cpp src/readInput.cpp src/dispMenu.cpp src/writeFile.cpp src/validateInput.cpp src/outputList.cpp src/multiMovieHeader.cpp src/subString.cpp)
