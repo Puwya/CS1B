@@ -7,7 +7,7 @@ void switchOption(const MenuOptions &option, DVD* head, std::fstream &oFile) {
    switch (option)
    {
       case OutputEntireList:
-         std::cout << "\nListing all MOVIES!!\n\n";
+         std::cout << "\nCOMPLETE MOVIE LISTING!\n\n";
          oFile << "All Movies Found:\n";
          outputList(head, oFile, index);
          oFile << "\n";
@@ -41,8 +41,28 @@ void switchOption(const MenuOptions &option, DVD* head, std::fstream &oFile) {
          }
          break;
       case YearSearch:
+         std::cout << "\nWhich year are you looking for? ";
+         std::cin >> keyInt;
+         std::cout << "\nSearching for the year " << keyInt << "\n";
+         searchKeyLogic(head, oFile, keyInt, index);
+         if (index == 0)
+            std::cout << "Sorry, no movies for the year " << keyInt << " were found.\n";
+         else {
+            std::cout << "Found " << index << " movies for the year " << keyInt << "!\n";
+            oFile << "\n";
+         }
          break;
       case RatingSearch:
+         std::cout << "\nWhich rating are you looking for? ";
+         std::cin >> keyInt;
+         std::cout << "\nSearching for the rating " << keyInt << "\n";
+         searchKeyLogic(head, oFile, keyInt, index);
+         if (index == 0)
+            std::cout << "Sorry, no movies for the rating " << keyInt << " were found.\n";
+         else {
+            std::cout << "Found " << index << " movies for the rating " << keyInt << "!\n";
+            oFile << "\n";
+         }
          break;
       case Exit:
          break;

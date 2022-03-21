@@ -1,6 +1,5 @@
 #include "../include/header.h"
 
-
 int main() {
    DVD *head = NULL;
    head = readInput();
@@ -14,7 +13,7 @@ int main() {
       dispMenu();
       option = switchValidation();
       switchOption(option, head, oFile);
-      usleep(1000000);
+      usleep(1300000);
    } while(option != 0);
 
    oFile.close();

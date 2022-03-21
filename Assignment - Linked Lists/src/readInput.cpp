@@ -19,7 +19,7 @@ DVD *readInput() {
       std::getline(inFile, node -> synopsis);
       std::getline(inFile, temp);
       
-      node -> nextNode = head;
+      node->nextNode = head;
       head = node;
       node = new DVD;
    }
