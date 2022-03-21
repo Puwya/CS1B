@@ -25,6 +25,7 @@ void searchKeyLogic(DVD *head, std::fstream &oFile, const int &key, int &index);
 void searchKeyLogic(DVD *head, std::fstream &oFile, const std::string &key, int &index);
 void outputList(DVD *head, std::fstream &oFile, int &index);
 void multiMoviePrint(std::fstream &oFile, DVD* node, int &index);
+void switchOption(const MenuOptions &option, DVD* head, std::fstream &oFile);
 void subString(DVD *head);
 
 #endif
