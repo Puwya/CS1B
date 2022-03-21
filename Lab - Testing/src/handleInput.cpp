@@ -38,3 +38,4 @@ void handleInput(size_t &numOfSheeps, size_t &numOfChocolateBars) {
       }
    }while(!inputValidated);
 }
+

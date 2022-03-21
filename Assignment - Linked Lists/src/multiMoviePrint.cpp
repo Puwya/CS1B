@@ -1,6 +1,7 @@
 #include "../include/header.h"
 
 void multiMoviePrint(std::fstream &oFile, DVD* node, int &index) {
+   ++index;
    oFile << std::left;
    if(index == 1) {
       oFile << "MOVIE #"  << std::setw(50) << "  TITLE" << "YEAR " << "RATING  "  << std::setw(18) << "GENRE" << std::setw(18) << "ALT GENRE" << std::setw(20) << "LEAD ACTOR" << "SUPPORTING ACTOR\n";
@@ -27,5 +28,4 @@ void multiMoviePrint(std::fstream &oFile, DVD* node, int &index) {
    oFile << "\n";
 
    oFile << std::right;
-   ++index;
 }

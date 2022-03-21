@@ -13,7 +13,7 @@ int main() {
    int index;
 
    do {
-      index = 1;
+      index = 0;
       system("clear");
       dispMenu();
 
@@ -34,7 +34,12 @@ int main() {
             std::getline(std::cin, strKey);
             std::cout << "\nSearching for the genre " << strKey << "\n";
             searchKeyLogic(head, oFile, strKey, index);
-            oFile << "\n";
+            if (index == 0)
+               std::cout << "Sorry, no movies for the genre " << strKey << " were found.\n";
+            else {
+               std::cout << "Found " << index << " movies for the genre " << strKey << "!\n";
+               oFile << "\n";
+            }
             break;
          case ActorSearch:
             std::cout << "\nWhich Actor are you looking for? ";
@@ -42,7 +47,12 @@ int main() {
             std::getline(std::cin, strKey);
             std::cout << "\nSearching for the actor " << strKey << "\n";
             searchKeyLogic(head, oFile, strKey, index);
-            oFile << "\n";
+            if (index == 0)
+               std::cout << "Sorry, no movies for the actor " << strKey << " were found.\n";
+            else {
+               std::cout << "Found " << index << " movies for the actor " << strKey << "!\n";
+               oFile << "\n";
+            }
             break;
          case YearSearch:
             break;

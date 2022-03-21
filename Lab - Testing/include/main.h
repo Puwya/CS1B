@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <iomanip>
-#include <unistd.h>
 
 void heading();//prints out heading
 void handleInput(size_t &numOfSheeps, size_t &numOfChocolateBars);//handles input of sheeps and chocolate bars
