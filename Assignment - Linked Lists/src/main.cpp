@@ -24,6 +24,7 @@ int main() {
             std::cout << "\nListing all MOVIES!!\n\n";
             oFile << "All Movies Found:\n";
             outputList(head, oFile, index);
+            oFile << "\n";
             break;
          case TitleSearch:
             break;
@@ -33,6 +34,7 @@ int main() {
             std::getline(std::cin, strKey);
             std::cout << "\nSearching for the genre " << strKey << "\n";
             searchKeyLogic(head, oFile, strKey, index);
+            oFile << "\n";
             break;
          case ActorSearch:
             std::cout << "\nWhich Actor are you looking for? ";
@@ -40,6 +42,7 @@ int main() {
             std::getline(std::cin, strKey);
             std::cout << "\nSearching for the actor " << strKey << "\n";
             searchKeyLogic(head, oFile, strKey, index);
+            oFile << "\n";
             break;
          case YearSearch:
             break;
