@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include <iomanip>
+#include <unistd.h>
 
 struct DVD {
    std::string title;
@@ -20,8 +21,10 @@ enum MenuOptions { Exit = 0, OutputEntireList, TitleSearch, GenreSearch, ActorSe
 DVD *readInput();
 void dispMenu();
 MenuOptions switchValidation();
-void outputList(DVD *head, std::fstream &oFile);
-void multiMovieHeader(std::fstream &oFile);
+void searchKeyLogic(DVD *head, std::fstream &oFile, const int &key, int &index);
+void searchKeyLogic(DVD *head, std::fstream &oFile, const std::string &key, int &index);
+void outputList(DVD *head, std::fstream &oFile, int &index);
+void multiMoviePrint(std::fstream &oFile, DVD* node, int &index);
 void subString(DVD *head);
 
 #endif
