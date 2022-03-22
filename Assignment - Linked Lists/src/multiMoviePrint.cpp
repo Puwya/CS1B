@@ -29,6 +29,7 @@ void multiMoviePrint(std::fstream &oFile, DVD* node, int &index) {
       oFile << "\n";
       if (index == 10)
          oFile << "...\n";
+      oFile << "\n";
    }
 
    oFile << std::right;

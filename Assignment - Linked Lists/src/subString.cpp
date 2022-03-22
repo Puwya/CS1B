@@ -1,6 +1,6 @@
 #include "../include/header.h"
 
-void subString(DVD *head) {
+void subString(DVD* head) {
    DVD* node = head;
    while (node->nextNode != NULL) {
       node->title = node->title.substr(0, node->title.size() - 1);

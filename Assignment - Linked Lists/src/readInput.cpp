@@ -5,10 +5,17 @@ DVD *readInput() {
    DVD *node = new DVD;
    std::fstream inFile;
    std::string temp;
+   std::string inputFile;
+   std::cout << "Which input file would you like to use(type d for default file)? ";
+   std::getline(std::cin, inputFile);
+   if (inputFile != "d")
+      inputFile = "../build/" + inputFile;
+   else
+      inputFile = "../build/AS5-BigInFile.txt";
 
-   inFile.open("../build/AS5 - BigInFile.txt", std::ios::in);
+   inFile.open(inputFile, std::ios::in);
 
-   while (inFile) {
+   while (!inFile.eof()) {
       std::getline(inFile, node -> title);
       std::getline(inFile, node -> leadActor);
       std::getline(inFile, node -> subActor);

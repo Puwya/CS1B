@@ -27,5 +27,14 @@ void outputList(DVD *head, std::fstream &oFile, int &index);
 void multiMoviePrint(std::fstream &oFile, DVD* node, int &index);
 void switchOption(const MenuOptions &option, DVD* head, std::fstream &oFile);
 void subString(DVD *head);
+void genreSearch(DVD* head, std::fstream &oFile, int &index);
+void actorSearch(DVD* head, std::fstream &oFile, int &index);
+void yearSearch(DVD* head, std::fstream &oFile, int &index);
+void ratingSearch(DVD* head, std::fstream &oFile, int &index);
+void yearValidation(int &keyInt);
+void ratingValidation(int &keyInt);
+void printSingleMovie(DVD* node, std::fstream &oFile);
+void titleSearch(DVD* head, std::fstream &oFile);
+void titleSearchLogic(DVD* head, std::fstream &oFile, std::string strKey);
 
 #endif
