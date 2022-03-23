@@ -1,6 +1,16 @@
 #include "../include/header.h"
+/****************************************************************************
+ * Title: multiMoviePrint
+ * --------------------------------------------------------------------------
+ * FUNCTION:
+ *    handles output of multiple movies also handles greater than format 
+ * amount feature and cuts it accordingly 
+ * --------------------------------------------------------------------------
+ * NO Data Table
+ * ----------
+ ***************************************************************************/
 
-void multiMoviePrint(std::fstream &oFile, DVD* node, int &index) {
+ void multiMoviePrint(std::fstream &oFile, DVD* node, int &index) {
    ++index;
    oFile << std::left;
    if (index <= 10) {
@@ -10,8 +20,8 @@ void multiMoviePrint(std::fstream &oFile, DVD* node, int &index) {
       }
       oFile << "   " << std::setw(6) << index  << std::setw(48);
 
-      if (node->title.size() > 47) {
-         oFile << (node->title.substr(0, 44)) + "...";
+      if (node->title.size() > 47) {//if title is greater than format space
+         oFile << (node->title.substr(0, 44)) + "..."; //we cut and add ...
       }else
          oFile << node->title;
 
@@ -29,7 +39,6 @@ void multiMoviePrint(std::fstream &oFile, DVD* node, int &index) {
       oFile << "\n";
       if (index == 10)
          oFile << "...\n";
-      oFile << "\n";
    }
 
    oFile << std::right;

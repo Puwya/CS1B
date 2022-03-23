@@ -18,23 +18,41 @@ struct DVD {
    DVD *nextNode;
 };
 enum MenuOptions { Exit = 0, OutputEntireList, TitleSearch, GenreSearch, ActorSearch, YearSearch, RatingSearch};
-DVD *readInput();
-void dispMenu();
-MenuOptions switchValidation();
-void searchKeyLogic(DVD *head, std::fstream &oFile, const int &key, int &index);
-void searchKeyLogic(DVD *head, std::fstream &oFile, const std::string &key, int &index);
-void outputList(DVD *head, std::fstream &oFile, int &index);
-void multiMoviePrint(std::fstream &oFile, DVD* node, int &index);
-void switchOption(const MenuOptions &option, DVD* head, std::fstream &oFile);
-void subString(DVD *head);
-void genreSearch(DVD* head, std::fstream &oFile, int &index);
-void actorSearch(DVD* head, std::fstream &oFile, int &index);
-void yearSearch(DVD* head, std::fstream &oFile, int &index);
-void ratingSearch(DVD* head, std::fstream &oFile, int &index);
-void yearValidation(int &keyInt);
-void ratingValidation(int &keyInt);
-void printSingleMovie(DVD* node, std::fstream &oFile);
-void titleSearch(DVD* head, std::fstream &oFile);
-void titleSearchLogic(DVD* head, std::fstream &oFile, std::string strKey);
+void heading();//outputs heading
+DVD *readInput();//reads data from file and stores it in heap using linked list
+void dispMenu();//displays menu
+MenuOptions switchValidation();//validates switch input and returns enum MenuOptions
+void searchKeyLogic(
+   DVD *head,
+   std::fstream &oFile, 
+   const int &key, 
+   int &index);//searches for year or rating
+
+void searchKeyLogic(
+   DVD *head, 
+   std::fstream &oFile, 
+   const std::string &key, 
+   int &index);//searches for genre or actor
+
+void outputList(
+   DVD *head, 
+   std::fstream &oFile, 
+   int &index);//outputs entire list to outfile
+
+//testing which format of protype is more used if you can give me some help
+
+void multiMoviePrint(std::fstream &oFile, DVD* node, int &index);//prints multi movies
+void switchOption(const MenuOptions &option, DVD* head, std::fstream &oFile);//directs user on there choice
+void subString(DVD *head);//formats data
+void genreSearch(DVD* head, std::fstream &oFile, int &index);//genre search output
+void actorSearch(DVD* head, std::fstream &oFile, int &index);//actor search output
+void yearSearch(DVD* head, std::fstream &oFile, int &index);//year search output
+void ratingSearch(DVD* head, std::fstream &oFile, int &index);//rating search output
+void yearValidation(int &keyInt);//validates year using try catch
+void ratingValidation(int &keyInt);//validates rating using try catch
+void printSingleMovie(DVD* node, std::fstream &oFile);//prints single movie
+void titleSearch(DVD* head, std::fstream &oFile);//title search output
+void titleSearchLogic(DVD* head, std::fstream &oFile, std::string strKey);//searches linked list for title
+void deallocate(DVD* head);//dallocates memory
 
 #endif
