@@ -9,5 +9,7 @@ add_executable(main
     src/readData.cpp
     src/heading.cpp
     src/formatData.cpp
+    src/dispList.cpp
+    src/pop.cpp
 )
 target_include_directories(main PUBLIC /include)

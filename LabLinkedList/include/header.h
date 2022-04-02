@@ -9,6 +9,8 @@
 void readData(StudentNode** head);
 void heading();
 void formatData(StudentNode** head);
-void dispList(const StudentNode* &head);
+void dispList(StudentNode* &head);
+void pop(StudentNode** head);
+void search(StudentNode* &head);
 
 #endif

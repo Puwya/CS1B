@@ -31,6 +31,7 @@ void readData(StudentNode** head)
         }
     }else {
         std::cout << "File did not open successfully!\n";
+        delete node;
     }
     
     inFile.close();
