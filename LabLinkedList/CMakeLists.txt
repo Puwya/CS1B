@@ -11,5 +11,6 @@ add_executable(main
     src/formatData.cpp
     src/dispList.cpp
     src/pop.cpp
+    src/search.cpp
 )
 target_include_directories(main PUBLIC /include)

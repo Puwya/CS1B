@@ -9,12 +9,12 @@ void formatData(StudentNode** head)
     {
         if (node->name[node->name.size() - 1] == ' ')
         {
-            node->name.substr(0, node->name.size() - 2);
+            node->name = node->name.substr(0, node->name.size() - 1);
         }
 
         if (node->major[node->major.size() - 1] == ' ')
         {
-            node->major.substr(0, node->major.size() - 2);
+            node->major = node->major.substr(0, node->major.size() - 1);
         }
         node = node->nextNode;
     }
