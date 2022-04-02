@@ -9,5 +9,6 @@
 void readData(StudentNode** head);
 void heading();
 void formatData(StudentNode** head);
+void dispList(const StudentNode* &head);
 
 #endif
