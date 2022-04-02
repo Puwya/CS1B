@@ -12,5 +12,6 @@ add_executable(main
     src/dispList.cpp
     src/pop.cpp
     src/search.cpp
+    src/average.cpp
 )
 target_include_directories(main PUBLIC /include)

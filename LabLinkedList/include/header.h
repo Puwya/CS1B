@@ -12,5 +12,6 @@ void formatData(StudentNode** head);
 void dispList(StudentNode* &head);
 void pop(StudentNode** head);
 void search(StudentNode* &head);
+void average(StudentNode** head);
 
 #endif
