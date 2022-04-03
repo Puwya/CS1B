@@ -9,7 +9,7 @@ void search(StudentNode* &head, std::map<std::string, StudentNode> &studentData)
     std::getline(std::cin, key);
 
 
-    if (studentData.find(key) != studentData.end())
+    if (studentData.find(key) != studentData.end()) //Using .find method in the map to find key 
     {
         StudentNode node = studentData[key];
 
