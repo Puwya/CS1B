@@ -5,12 +5,11 @@ int main()
 {
 	heading();
 	StudentNode* head = nullptr;
-	readData(&head);//a ptr to ptr for accesses the ptr in main
-	formatData(&head);
+    std::map<std::string, StudentNode> studentData;
+	readData(&head, studentData);//a ptr to ptr for accesses the ptr in main
 
-	search(head);
-	dispList(head);
-	pop(&head);
+	search(head, studentData);
+	pop(&head, studentData);
 	average(&head);
 	dispList(head);
 

@@ -1,7 +1,7 @@
 #include "../include/header.h"
 #include "../include/studentNode.h"
 
-void pop(StudentNode** head)
+void pop(StudentNode** head, std::map<std::string, StudentNode> &studentData)
 {
     StudentNode* node = *head;
     if (node != nullptr)
@@ -14,6 +14,7 @@ void pop(StudentNode** head)
         std::cout << std::setw(8) << "GPA:" << node->gpa << "\n\n";
         std::cout << std::right;
 
+        studentData.erase(node->name);
         *head = node->nextNode;
         delete node;
     }else

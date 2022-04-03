@@ -1,7 +1,7 @@
 #include "../include/header.h"
 #include "../include/studentNode.h"
 
-void readData(StudentNode** head) 
+void readData(StudentNode** head, std::map<std::string, StudentNode> &studentData) 
 {
     StudentNode* node = nullptr;
     node = new StudentNode;
@@ -21,6 +21,18 @@ void readData(StudentNode** head)
             inFile >> node->gpa;
             inFile.ignore(1000, '\n');
             std::getline(inFile, temp);
+
+            if (node->name[node->name.size() - 1] == ' ')
+            {
+                node->name = node->name.substr(0, node->name.size() - 1);
+            }
+
+            if (node->major[node->major.size() - 1] == ' ')
+            {
+                node->major = node->major.substr(0, node->major.size() - 1);
+            }
+
+            studentData[node->name] = *node;
 
             if (!inFile.eof()) 
             {
