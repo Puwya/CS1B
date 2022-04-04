@@ -145,13 +145,13 @@ void deallocate(Person* &head);
  ****************************************************************************/
 
 /****************************************************************************
- * Implementing a Stack
+ * Implementing a Queue
  * --------------------------------------------------------------------------
  * This program controls a flow of a linked list.
- * It performs as a Stack Linked list FILO
+ * It performs as a Queue Linked list FIFO
  * The program prompts user with a menu choices are enqueue a person on the
- * stack, pop a person off the stack, FRONT at the top of the stack, is empty
- * to tell the user if the stack is empty, and size tell the user what size
+ * stack, pop a person off the queue, FRONT at the top of the queue, is empty
+ * to tell the user if the queue is empty, and size tell the user what size
  * is the stack.
  * --------------------------------------------------------------------------
  * Input:
@@ -159,13 +159,13 @@ void deallocate(Person* &head);
  * <Input info when prompted command>
  * 
  * Output:
- * <Output the class headin>
+ * <Output the class heading>
  * <Output the menu options>
  * <Output prompt when enqueueing>
  * <Output info when popping>
  * <Output FRONTing info>
- * <Output whether stack is empty>
- * <Output size of stack>
+ * <Output whether queue is empty>
+ * <Output size of queue>
  ***************************************************************************/
 
 #include "../include/header.h"
