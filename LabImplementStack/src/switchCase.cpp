@@ -12,9 +12,9 @@ void switchCase(const Menu &choice, Person* &head, int &size)
             break;
         case ISEMPTY:
             if (isEmpty(&head))
-                std::cout << "Yes, the stack is empty!\n";
+                std::cout << "\nYes, the stack is empty!\n";
             else
-                std::cout << "The stack is NOT empty!\n";
+                std::cout << "\nThe stack is NOT empty!\n";
             break;
         case PEEK:
             peek(&head);
