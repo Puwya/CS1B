@@ -8,4 +8,4 @@ add_executable(main src/main.cpp src/memory/createList.cpp
                     src/handlers/readInput.cpp src/handlers/insertNode.cpp
                     src/handlers/handleNodeFront.cpp 
                     src/handlers/handleNodeBack.cpp
-                    src/handlers/findNodePlacement.cpp)
+                    src/handlers/handleNodePlacement.cpp)

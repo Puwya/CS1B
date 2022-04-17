@@ -32,5 +32,5 @@ void readInput(Node* &node, std::fstream &inFile);
 void handleNodeFront(Node* &head, Node* &currNode, Node* &node);
 void handleNodeBack(Node* &tail, Node* &currNode, Node* &node);
 void insertNode(Node* &node, Node* &currNode);
-void findNodePlacement(Node* &head, Node* &tail, Node* &node, Node* &currNode);
+void handleNodePlacement(Node* &head, Node* &tail, Node* &node, Node* &currNode);
 #endif // HEADER_H_

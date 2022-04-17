@@ -14,7 +14,7 @@ void createList(Node* &head, Node* &tail) {
     while (!inFile.eof()) {
       currNode = new Node;
       readInput(currNode, inFile);
-      findNodePlacement(head, tail, node, currNode);
+      handleNodePlacement(head, tail, node, currNode);
     }
   }
   inFile.close();
