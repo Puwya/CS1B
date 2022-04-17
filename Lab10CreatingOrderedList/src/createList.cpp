@@ -17,4 +17,5 @@ void createList(Node* &head, Node* &tail) {
       findNodePlacement(head, tail, node, currNode);
     }
   }
+  inFile.close();
 }
