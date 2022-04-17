@@ -1,4 +1,4 @@
-#include "../include/header.h"
+#include "../../include/header.h"
 
 void findNodePlacement(Node* &head, Node* &tail, Node* &node, Node* &currNode) {
   bool placed = false;

@@ -1,4 +1,4 @@
-#include "../include/header.h"
+#include "../../include/header.h"
 
 void createList(Node* &head, Node* &tail) {
   // Creating input file

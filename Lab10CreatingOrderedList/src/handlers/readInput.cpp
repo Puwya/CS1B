@@ -1,4 +1,4 @@
-#include "../include/header.h"
+#include "../../include/header.h"
 
 void readInput(Node* &node, std::fstream &inFile) {
   std::string temp;

@@ -1,4 +1,4 @@
-#include "../include/header.h"
+#include "../../include/header.h"
 
 void insertNode(Node* &node, Node* &currNode) {
   node->prev->next = currNode;
