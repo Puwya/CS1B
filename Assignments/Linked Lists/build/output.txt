@@ -1,0 +1,23 @@
+All Movies Found:
+MOVIE #  TITLE                                           YEAR RATING  GENRE             ALT GENRE         LEAD ACTOR          SUPPORTING ACTOR
+------- ------------------------------------------------ ---- ------ ----------------- ----------------- ------------------- -------------------
+   1     007 - Casino Royale                             2006    8    Action            Adventure         Daniel Craig        Eva Green
+   2     007 - Quantum of Solace                         2008    7    Action            Adventure         Daniel Craig        Olga Kurylenko
+   3     10 Items or Less                                2006    7    Comedy            Drama             Morgan Freeman      Paz Vega
+   4     15 minutes                                      2001    6    Action            Crime             Robert De Niro      Edward Burns
+   5     17 Again                                        2009    7    Comedy            Comedy            Zac Effron          Leslie Mann
+   6     21                                              2008    7    Drama             Drama             Jim Sturgess        Kevin Spacey
+   7     25th Hour                                       2002    8    Drama             Drama             Edward Norton       Philip Seymour ...
+   8     3:10 to Yuma                                    2007    8    Drama             Crime             Russell Crowe       Christian Bale
+   9     50 First Dates                                  2004    7    Romantic Comedy   Comedy            Adam Sandler        Drew Barrymore
+   10    88 Minutes                                      2007    6    Action            Crime             Al Pacino           Alicia Witt
+...
+
+Search by rating for 4 found:
+MOVIE #  TITLE                                           YEAR RATING  GENRE             ALT GENRE         LEAD ACTOR          SUPPORTING ACTOR
+------- ------------------------------------------------ ---- ------ ----------------- ----------------- ------------------- -------------------
+   1     Daddy's Little Girls                            2007    4    Drama             Romantic          Gabrielle Union     Idris Elba
+   2     Karate Kid 3, The                               1989    4    Drama             Sport             Ralph Macchio       Pat Morita
+   3     Lies and Illusions                              2009    4    Action            Comedy            Christian Slater    Cuba Gooding, Jr.
+   4     Love Guru, The                                  2008    4    Comedy            Comedy            Mike Myers          Justin Timberlake
+
