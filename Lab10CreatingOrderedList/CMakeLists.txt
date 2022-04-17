@@ -5,4 +5,5 @@ set(CMAKE_BUILD_TYPE Debug)
 
 project(main)
 add_executable(main src/main.cpp src/createList.cpp src/readInput.cpp
-                    src/placeNodeFrontofList.cpp src/placeNodeBackofList.cpp)
+                    src/placeNodeFrontofList.cpp src/placeNodeBackofList.cpp
+                    src/insertNode.cpp)

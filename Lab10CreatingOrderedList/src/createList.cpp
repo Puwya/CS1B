@@ -21,17 +21,14 @@ void createList(Node* &head, Node* &tail) {
       currNode = new Node;
       readInput(currNode, inFile);
 
-        node = head;
+      node = head;
       while (!placed) {
         if (currNode->name.compare(node->name) < 0) {
           placed = true;
           if (node->prev == nullptr) {
             placeNodeFrontofList(head, currNode, node);
           }else {
-            node->prev->next = currNode;
-            currNode->prev = node->prev;
-            node->prev = currNode;
-            currNode->next = node;
+            insertNode(node, currNode);
           }
         }else if (node->next == nullptr) {
           placeNodeBackofList(tail, currNode, node);

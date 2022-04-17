@@ -6,9 +6,9 @@ int main() {
   createList(head, tail);
   Node* node = head;
 
-  do {
-    node = node->next;
+  while (node != nullptr) {
     std::cout << node->name << "\n";
-  }while (node->next != nullptr);
+    node = node->next;
+  }
   return 0;
 }
