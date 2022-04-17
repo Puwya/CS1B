@@ -7,12 +7,12 @@ void findNodePlacement(Node* &head, Node* &tail, Node* &node, Node* &currNode) {
     if (currNode->name.compare(node->name) < 0) {
       placed = true;
       if (node->prev == nullptr) {
-        placeNodeFrontofList(head, currNode, node);
+        handleNodeFront(head, currNode, node);
       }else {
         insertNode(node, currNode);
       }
     }else if (node->next == nullptr) {
-      placeNodeBackofList(tail, currNode, node);
+      handleNodeBack(tail, currNode, node);
       placed = true;
     }else {
       node = node->next;

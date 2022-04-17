@@ -1,6 +1,6 @@
 #include "../../include/header.h"
 
-void placeNodeFrontofList(Node* &head, Node* &currNode, Node* &node) {
+void handleNodeFront(Node* &head, Node* &currNode, Node* &node) {
   node->prev = currNode;
   currNode->next = node;
   head = currNode;

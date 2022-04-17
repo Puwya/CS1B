@@ -29,8 +29,8 @@ enum Menu {
 
 void createList(Node* &head, Node* &tail);
 void readInput(Node* &node, std::fstream &inFile);
-void placeNodeFrontofList(Node* &head, Node* &currNode, Node* &node);
-void placeNodeBackofList(Node* &tail, Node* &currNode, Node* &node);
+void handleNodeFront(Node* &head, Node* &currNode, Node* &node);
+void handleNodeBack(Node* &tail, Node* &currNode, Node* &node);
 void insertNode(Node* &node, Node* &currNode);
 void findNodePlacement(Node* &head, Node* &tail, Node* &node, Node* &currNode);
 #endif // HEADER_H_
