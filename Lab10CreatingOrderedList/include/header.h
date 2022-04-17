@@ -13,6 +13,8 @@ struct Node {
   int age;
   Node* next;
   Node* prev;
+  // Constructors
+  Node() : next(nullptr), prev(nullptr) {}
 };
 
 enum Menu {
@@ -30,4 +32,5 @@ void readInput(Node* &node, std::fstream &inFile);
 void placeNodeFrontofList(Node* &head, Node* &currNode, Node* &node);
 void placeNodeBackofList(Node* &tail, Node* &currNode, Node* &node);
 void insertNode(Node* &node, Node* &currNode);
+void findNodePlacement(Node* &head, Node* &tail, Node* &node, Node* &currNode);
 #endif // HEADER_H_

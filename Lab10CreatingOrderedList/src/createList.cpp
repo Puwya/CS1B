@@ -7,36 +7,14 @@ void createList(Node* &head, Node* &tail) {
 
   if (!inFile.eof()) {
     Node* node = new Node;
-    head = node;
-    tail = node;
-    node->prev = nullptr;
-    node->next = nullptr;
-
+    head = tail = node;
     readInput(node, inFile); 
     
     Node* currNode = nullptr;
     while (!inFile.eof()) {
-      bool placed = false;
-
       currNode = new Node;
       readInput(currNode, inFile);
-
-      node = head;
-      while (!placed) {
-        if (currNode->name.compare(node->name) < 0) {
-          placed = true;
-          if (node->prev == nullptr) {
-            placeNodeFrontofList(head, currNode, node);
-          }else {
-            insertNode(node, currNode);
-          }
-        }else if (node->next == nullptr) {
-          placeNodeBackofList(tail, currNode, node);
-          placed = true;
-        }else {
-          node = node->next;
-        }
-      }
+      findNodePlacement(head, tail, node, currNode);
     }
   }
 }
