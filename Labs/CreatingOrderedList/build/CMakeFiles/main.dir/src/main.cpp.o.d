@@ -1,6 +1,6 @@
 CMakeFiles/main.dir/src/main.cpp.o: \
-  /Users/Dev/Cpp/CS1B/Lab10CreatingOrderedList/src/main.cpp \
-  /Users/Dev/Cpp/CS1B/Lab10CreatingOrderedList/src/../include/header.h \
+  /Users/Dev/CC/CS1B/Labs/CreatingOrderedList/src/main.cpp \
+  /Users/Dev/CC/CS1B/Labs/CreatingOrderedList/src/../include/header.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/pthread.h \
