@@ -5,7 +5,10 @@ set(CMAKE_BUILD_TYPE Debug)
 
 project(main)
 add_executable(main src/main.cpp src/memory/createList.cpp 
-               src/handlers/readInput.cpp src/handlers/insertNode.cpp
+               src/helpers/readInput.cpp src/handlers/insertNode.cpp
                src/handlers/handleNodeFront.cpp 
-               src/handlers/handleNodeBack.cpp
-               src/handlers/handleNodePlacement.cpp)
+               src/handlers/handleNodeBack.cpp src/helpers/displayHeader.cpp
+               src/handlers/handleNodePlacement.cpp
+               src/handlers/handleDisplayList.cpp src/helpers/displayMenu.cpp
+               src/handlers/isListEmpty.cpp src/handlers/searchName.cpp
+               src/handlers/removeNode.cpp src/handlers/clearList.cpp)
