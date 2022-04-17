@@ -1,3 +1,0 @@
-/Users/Dev/CC/CS1B/Labs/CreatingOrderedList/build/CMakeFiles/main.dir
-/Users/Dev/CC/CS1B/Labs/CreatingOrderedList/build/CMakeFiles/edit_cache.dir
-/Users/Dev/CC/CS1B/Labs/CreatingOrderedList/build/CMakeFiles/rebuild_cache.dir

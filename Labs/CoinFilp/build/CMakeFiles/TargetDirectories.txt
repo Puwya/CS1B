@@ -1,3 +1,0 @@
-/Users/Dev/C++Projects/CS1B/Lab-CoinFilp/build/CMakeFiles/main.dir
-/Users/Dev/C++Projects/CS1B/Lab-CoinFilp/build/CMakeFiles/edit_cache.dir
-/Users/Dev/C++Projects/CS1B/Lab-CoinFilp/build/CMakeFiles/rebuild_cache.dir
