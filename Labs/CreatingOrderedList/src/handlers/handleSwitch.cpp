@@ -21,7 +21,7 @@ void handleSwitch(Node* &head, Node* &tail) {
       }
       case DisplayList: {
         if (isListEmpty(head)) {
-          std::cout << "Yes, the list is empty.\n\n";
+          std::cout << "Can't display an empty list\n\n";
         }else {
           handleDisplayList(head);
         }
@@ -57,7 +57,7 @@ void handleSwitch(Node* &head, Node* &tail) {
           std::getline(std::cin, searchKey);
           removeNode(head, tail, searchKey);
         }else {
-          std::cout << "Can't remove an empty list\n\n";
+          std::cout << "Can't remove from an empty list\n\n";
         }
         break;
       }

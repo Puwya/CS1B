@@ -21,6 +21,6 @@ void removeNode(Node* &head, Node* &tail, std::string searchKey) {
     }
     node = node->next;
   }
-  std::cout << "I'm sorry, \"" << searchKey << "\" was NOT found!\n";
+  std::cout << "I'm sorry, \"" << searchKey << "\" was NOT found!\n\n";
   return;
 }

@@ -42,4 +42,5 @@ void removeNode(Node* &head, Node* &tail, std::string searchKey);
 void clearList(Node* &head, Node* &tail);
 void validateInput(Menu &choice);
 void handleSwitch(Node* &head, Node* &tail);
+void heading();
 #endif // HEADER_H_

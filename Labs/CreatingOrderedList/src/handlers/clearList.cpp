@@ -15,5 +15,5 @@ void clearList(Node* &head, Node* &tail) {
     node = head;
   }
   tail = nullptr;
-  std::cout << "\n";
+  std::cout << "\nThe list has been cleared!\n\n";
 }

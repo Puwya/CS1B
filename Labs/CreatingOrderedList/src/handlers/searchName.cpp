@@ -2,10 +2,6 @@
 
 bool searchName(Node* &head, std::string searchKey) {
   Node* node = head;
-  if (isListEmpty(node)) {
-    std::cout << "Can't search an empty list\n";
-    return false;
-  }
   std::cout << "\nSearching for " << searchKey << "...\n\n";
   while (node != nullptr) {
     if (node->name == searchKey) {

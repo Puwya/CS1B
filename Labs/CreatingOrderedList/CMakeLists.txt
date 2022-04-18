@@ -12,4 +12,5 @@ add_executable(main src/main.cpp src/memory/createList.cpp
                src/handlers/handleDisplayList.cpp src/helpers/displayMenu.cpp
                src/handlers/isListEmpty.cpp src/handlers/searchName.cpp
                src/handlers/removeNode.cpp src/handlers/clearList.cpp
-               src/handlers/validateInput.cpp src/handlers/handleSwitch.cpp)
+               src/handlers/validateInput.cpp src/handlers/handleSwitch.cpp
+               src/helpers/heading.cpp)
