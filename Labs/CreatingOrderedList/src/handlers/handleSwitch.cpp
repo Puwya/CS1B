@@ -5,6 +5,7 @@ void handleSwitch(Node* &head, Node* &tail) {
   do {
     displayMenu();
     validateInput(choice);
+    std::cout << "\n";
     switch (choice) {
       case Exit: {
         break;
@@ -14,13 +15,13 @@ void handleSwitch(Node* &head, Node* &tail) {
           createList(head, tail);
 
         }else {
-          std::cout << "List is already made\n";
+          std::cout << "List is already made\n\n";
         }
         break;
       }
       case DisplayList: {
         if (isListEmpty(head)) {
-          std::cout << "Yes, the list is empty.\n";
+          std::cout << "Yes, the list is empty.\n\n";
         }else {
           handleDisplayList(head);
         }
@@ -28,9 +29,9 @@ void handleSwitch(Node* &head, Node* &tail) {
       }
       case IsEmpty: {
         if (isListEmpty(head)) {
-          std::cout << "Yes, the list is empty.\n";
+          std::cout << "Yes, the list is empty.\n\n";
         }else {
-          std::cout << "No, The list is NOT empty.\n";
+          std::cout << "No, The list is NOT empty.\n\n";
         }
         break;
       }
@@ -41,10 +42,10 @@ void handleSwitch(Node* &head, Node* &tail) {
           std::cin.ignore(1000, '\n');
           std::getline(std::cin, searchKey);
           if (!searchName(head, searchKey)) {
-            std::cout << "I'm sorry, \"" << searchKey << "\" was NOT found!\n";
+            std::cout << "I'm sorry, \"" << searchKey << "\" was NOT found!\n\n";
           }
         }else {
-          std::cout << "Can't search an empty list\n";
+          std::cout << "Can't search an empty list\n\n";
         }
         break;
       }
@@ -56,7 +57,7 @@ void handleSwitch(Node* &head, Node* &tail) {
           std::getline(std::cin, searchKey);
           removeNode(head, tail, searchKey);
         }else {
-          std::cout << "Can't remove an empty list\n";
+          std::cout << "Can't remove an empty list\n\n";
         }
         break;
       }
@@ -73,7 +74,7 @@ void handleSwitch(Node* &head, Node* &tail) {
         std::cout << std::right;
         std::cout << std::setw(11 - number.size())
                   << "****\n";
-        std::cout << "**** Please input a number between 0 and 6 ****\n";
+        std::cout << "**** Please input a number between 0 and 6 ****\n\n";
         break;
       }
     }

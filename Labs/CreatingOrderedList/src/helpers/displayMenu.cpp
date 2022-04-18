@@ -5,7 +5,7 @@ void displayMenu() {
   std::cout << "LIST MENU:\n";
   std::cout << "1 - Create List\n";
   std::cout << "2 - Display List\n";
-  std::cout << "3 - Is the lis empty?\n";
+  std::cout << "3 - Is the list empty?\n";
   std::cout << "4 - Search by name\n";
   std::cout << "5 - Remove node\n";
   std::cout << "6 - Clear List\n";

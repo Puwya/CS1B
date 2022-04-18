@@ -3,7 +3,7 @@
 void clearList(Node* &head, Node* &tail) {
   Node* node = head;
   if (isListEmpty(node)) {
-    std::cout << "The list has been cleared!\n";
+    std::cout << "The list has been cleared!\n\n";
     return;
   }
   std::cout << "CLEARING LIST:\n";
@@ -15,4 +15,5 @@ void clearList(Node* &head, Node* &tail) {
     node = head;
   }
   tail = nullptr;
+  std::cout << "\n";
 }

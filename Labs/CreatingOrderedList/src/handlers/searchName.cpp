@@ -12,7 +12,7 @@ bool searchName(Node* &head, std::string searchKey) {
       std::cout << std::left;
       std::cout << std::setw(10) << "Name:" << node->name << "\n";
       std::cout << std::setw(10) << "Gender:" << node->gender << "\n";
-      std::cout << std::setw(10) << "Age:" << node->age << "\n";
+      std::cout << std::setw(10) << "Age:" << node->age << "\n\n";
       std::cout << std::right;
       return true;
     }

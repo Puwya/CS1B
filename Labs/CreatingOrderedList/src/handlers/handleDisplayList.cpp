@@ -14,4 +14,5 @@ void handleDisplayList(Node* &head) {
     ++count;
     node = node->next;
   }
+  std::cout << "\n";
 }

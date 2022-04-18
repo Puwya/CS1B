@@ -17,5 +17,6 @@ void createList(Node* &head, Node* &tail) {
       handleNodePlacement(head, tail, node, currNode);
     }
   }
+  std::cout << "\n";
   inFile.close();
 }
