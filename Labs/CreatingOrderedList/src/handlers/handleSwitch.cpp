@@ -1,8 +1,18 @@
+/*******************************************************************************
+ * handleSwitch
+ ------------------------------------------------------------------------------- 
+ * FUNCTION: handles all movement of choice that the user chooses this is done
+ * by a switch case statement
+ * @param head ptr to head of linked list
+ * @param tail ptr to tail of linked list
+ * RETURNS - void
+ ******************************************************************************/
 #include "../../include/header.h"
 
 void handleSwitch(Node* &head, Node* &tail) {
   Menu choice = Exit;
   do {
+    // PROCCESSING - displayMenu and validateInput
     displayMenu();
     validateInput(choice);
     std::cout << "\n";
@@ -13,7 +23,6 @@ void handleSwitch(Node* &head, Node* &tail) {
       case CreateList: {
         if (head == nullptr) {
           createList(head, tail);
-
         }else {
           std::cout << "List is already made\n\n";
         }
@@ -37,10 +46,12 @@ void handleSwitch(Node* &head, Node* &tail) {
       }
       case SearchName: {
         std::string searchKey;
+        // if list is not empty else
         if (!isListEmpty(head)) {
           std::cout << "Who would you like to search for? ";
           std::cin.ignore(1000, '\n');
           std::getline(std::cin, searchKey);
+          // PROCCESSING - returns true if name found
           if (!searchName(head, searchKey)) {
             std::cout << "I'm sorry, \"" << searchKey << "\" was NOT found!\n\n";
           }
@@ -66,6 +77,7 @@ void handleSwitch(Node* &head, Node* &tail) {
         break;
       }
       default: {
+        // validation for out of bounds
         std::string number;
         number = std::to_string(choice);
         std::cout << std::left;
