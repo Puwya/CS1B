@@ -2,10 +2,6 @@
 
 void removeNode(Node* &head, Node* &tail, std::string searchKey) {
   Node* node = head;
-  if (isListEmpty(node)) {
-    std::cout << "Can't remove an empty list\n";
-    return;
-  }
   std::cout << "\nSearching for " << searchKey << "...\n\n";
   while (node != nullptr) {
     if (node->name == searchKey) {
