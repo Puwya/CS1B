@@ -5,10 +5,11 @@
 #include <iomanip>
 #include <string>
 #include <fstream>
+using namespace std;
 
 struct Node {
  public:
-  std::string name;
+  string name;
   char gender;
   int age;
   Node* next;
@@ -49,7 +50,7 @@ void createList(Node* &head, Node* &tail);
  * @param inFile passed by ref to access reading file
  * RETURNS - void
  ******************************************************************************/
-void readInput(Node* &node, std::fstream &inFile);
+void readInput(Node* &node, fstream &inFile);
 
 /*******************************************************************************
  * placeNodeFront
@@ -149,7 +150,7 @@ bool isListEmpty(Node* &head);
  * user
  * RETURNS - bool
  ******************************************************************************/
-bool searchName(Node* &head, std::string searchKey);
+bool searchName(Node* &head, string searchKey);
 
 /*******************************************************************************
  * removeNode
@@ -164,7 +165,7 @@ bool searchName(Node* &head, std::string searchKey);
  * user
  * RETURNS - void
  ******************************************************************************/
-void removeNode(Node* &head, Node* &tail, std::string searchKey);
+void removeNode(Node* &head, Node* &tail, string searchKey);
 
 /*******************************************************************************
  * clearList
@@ -287,14 +288,14 @@ void heading() {
 	const int LAB_NUM       = 10;
 	const char LAB_NAME[]   = "Creating Ordered List";
 
-	std::cout << std::left;
-	std::cout << "****************************************************\n";
-	std::cout << "*   PROGRAMMED BY : " << PROGRAMMER << std::endl;
-	std::cout << "*   " << std::setw(14) <<"CLASS" << ": " << CLASS << std::endl;
-	std::cout << "*   " << std::setw(14) <<"SECTION" << ": " << SECTION << std::endl;
-	std::cout << "*   LAB #" << std::setw(9) << LAB_NUM << ": " << LAB_NAME << std::endl;
-	std::cout << "****************************************************\n\n";
-	std::cout << std::right;
+	cout << left;
+	cout << "****************************************************\n";
+	cout << "*   PROGRAMMED BY : " << PROGRAMMER << endl;
+	cout << "*   " << setw(14) <<"CLASS" << ": " << CLASS << endl;
+	cout << "*   " << setw(14) <<"SECTION" << ": " << SECTION << endl;
+	cout << "*   LAB #" << setw(9) << LAB_NUM << ": " << LAB_NAME << endl;
+	cout << "****************************************************\n\n";
+	cout << right;
 }
 
 /*******************************************************************************
@@ -311,8 +312,8 @@ void heading() {
 
 void createList(Node* &head, Node* &tail) {
   // Creating input file
-  std::fstream inFile;
-  inFile.open("inFile.txt", std::ios::in);
+  fstream inFile;
+  inFile.open("inFile.txt", ios::in);
 
   if (!inFile.eof()) {
     // New Node getting allocated in the heap
@@ -330,7 +331,7 @@ void createList(Node* &head, Node* &tail) {
       handleNodePlacement(head, tail, node, currNode);
     }
   }
-  std::cout << "\n";
+  cout << "\n";
   inFile.close();
 }
 
@@ -345,10 +346,10 @@ void createList(Node* &head, Node* &tail) {
  ******************************************************************************/
 #include "../../include/header.h"
 
-void readInput(Node* &node, std::fstream &inFile) {
+void readInput(Node* &node, fstream &inFile) {
   // temp for '\n' 
-  std::string temp;
-  std::getline(inFile, node->name);
+  string temp;
+  getline(inFile, node->name);
   // PROCCESSING - if the last character of the string == ' ' then substr
   if (node->name[node->name.size() - 1] == ' ') {
     node->name = node->name.substr(0, node->name.find_last_of(' '));
@@ -357,9 +358,9 @@ void readInput(Node* &node, std::fstream &inFile) {
   inFile.ignore(1000, ' ');
   inFile >> node->age;
   inFile.ignore(1000, '\n');
-  std::getline(inFile, temp);
+  getline(inFile, temp);
 
-  std::cout << "Adding : " << node->name << "\n";
+  cout << "Adding : " << node->name << "\n";
 }
 
 /*******************************************************************************
@@ -463,11 +464,11 @@ void handleNodePlacement(Node* &head, Node* &tail, Node* &node, Node* &currNode)
 #include "../../include/header.h"
 
 void displayHeader() {
-  std::cout << std::left
-            << "   " << std::setw(5) << "#" << std::setw(28) << "NAME"
-            << std::setw(9) << "GENDER" << std::setw(4) << "AGE\n"
+  cout << left
+            << "   " << setw(5) << "#" << setw(28) << "NAME"
+            << setw(9) << "GENDER" << setw(4) << "AGE\n"
             << "-------" << " -------------------------" << "  --------" 
-            << " -----\n" << std::right;
+            << " -----\n" << right;
 }
 
 /*******************************************************************************
@@ -489,15 +490,15 @@ void handleDisplayList(Node* &head) {
   // if list is not empty then displayHeader
   if (!isListEmpty(node)) {displayHeader();}
   while (node != nullptr) {
-    std::cout << std::right;
-    std::cout << std::setw(4) << count;
-    std::cout << std::left;
-    std::cout << "    " << std::setw(30) << node->name << std::setw(7);
-    std::cout << node->gender << std::setw(4) << node->age << "\n";
+    cout << right;
+    cout << setw(4) << count;
+    cout << left;
+    cout << "    " << setw(30) << node->name << setw(7);
+    cout << node->gender << setw(4) << node->age << "\n";
     ++count;
     node = node->next;
   }
-  std::cout << "\n";
+  cout << "\n";
 }
 
 /*******************************************************************************
@@ -509,16 +510,16 @@ void handleDisplayList(Node* &head) {
 #include "../../include/header.h"
 
 void displayMenu() {
-  std::cout << std::right;
-  std::cout << "LIST MENU:\n";
-  std::cout << "1 - Create List\n";
-  std::cout << "2 - Display List\n";
-  std::cout << "3 - Is the list empty?\n";
-  std::cout << "4 - Search by name\n";
-  std::cout << "5 - Remove node\n";
-  std::cout << "6 - Clear List\n";
-  std::cout << "0 - to Exit\n";
-  std::cout << std::left;
+  cout << right;
+  cout << "LIST MENU:\n";
+  cout << "1 - Create List\n";
+  cout << "2 - Display List\n";
+  cout << "3 - Is the list empty?\n";
+  cout << "4 - Search by name\n";
+  cout << "5 - Remove node\n";
+  cout << "6 - Clear List\n";
+  cout << "0 - to Exit\n";
+  cout << left;
 }
 
 /*******************************************************************************
@@ -549,17 +550,17 @@ bool isListEmpty(Node* &head) {
  ******************************************************************************/
 #include "../../include/header.h"
 
-bool searchName(Node* &head, std::string searchKey) {
+bool searchName(Node* &head, string searchKey) {
   Node* node = head;
-  std::cout << "\nSearching for " << searchKey << "...\n\n";
+  cout << "\nSearching for " << searchKey << "...\n\n";
   while (node != nullptr) {
     // PROCCESSING - iterate through linked list until found
     if (node->name == searchKey) {
-      std::cout << std::left;
-      std::cout << std::setw(10) << "Name:" << node->name << "\n";
-      std::cout << std::setw(10) << "Gender:" << node->gender << "\n";
-      std::cout << std::setw(10) << "Age:" << node->age << "\n\n";
-      std::cout << std::right;
+      cout << left;
+      cout << setw(10) << "Name:" << node->name << "\n";
+      cout << setw(10) << "Gender:" << node->gender << "\n";
+      cout << setw(10) << "Age:" << node->age << "\n\n";
+      cout << right;
       return true;
     }
     node = node->next;
@@ -583,9 +584,9 @@ bool searchName(Node* &head, std::string searchKey) {
  ******************************************************************************/
 #include "../../include/header.h"
 
-void removeNode(Node* &head, Node* &tail, std::string searchKey) {
+void removeNode(Node* &head, Node* &tail, string searchKey) {
   Node* node = head;
-  std::cout << "\nSearching for " << searchKey << "...\n\n";
+  cout << "\nSearching for " << searchKey << "...\n\n";
   while (node != nullptr) {
     // PROCCESSING - iterate through linked list until found
     if (node->name == searchKey) {
@@ -600,14 +601,14 @@ void removeNode(Node* &head, Node* &tail, std::string searchKey) {
         node->prev->next = node->next;
         node->next->prev = node->prev;
       }
-      std::cout << "Removing " << node->name << "\n\n";
+      cout << "Removing " << node->name << "\n\n";
       delete node;
       return;
     }
     node = node->next;
   }
   // if node was not found
-  std::cout << "I'm sorry, \"" << searchKey << "\" was NOT found!\n\n";
+  cout << "I'm sorry, \"" << searchKey << "\" was NOT found!\n\n";
   return;
 }
 
@@ -627,12 +628,12 @@ void clearList(Node* &head, Node* &tail) {
   Node* node = head;
   // PROCCESSING - if list is already cleared
   if (isListEmpty(node)) {
-    std::cout << "The list has been cleared!\n\n";
+    cout << "The list has been cleared!\n\n";
     return;
   }
-  std::cout << "CLEARING LIST:\n";
+  cout << "CLEARING LIST:\n";
   while (node != nullptr) {
-    std::cout << "Removing " << node->name << "!\n";
+    cout << "Removing " << node->name << "!\n";
     // Handling the removal of nodes and also making sure everything points to
     // null
     head->prev = nullptr;
@@ -641,7 +642,7 @@ void clearList(Node* &head, Node* &tail) {
     node = head;
   }
   tail = nullptr;
-  std::cout << "\nThe list has been cleared!\n\n";
+  cout << "\nThe list has been cleared!\n\n";
 }
 
 /*******************************************************************************
@@ -661,19 +662,19 @@ void validateInput(Menu &choice) {
   bool valid = false;
   do {
     try {
-      std::cout << "Enter a command (0 to exit): ";
-      std::cin >> n;
+      cout << "Enter a command (0 to exit): ";
+      cin >> n;
       // PROCCESSING - if cin.fail then we throw an execption
-      if (std::cin.fail()) {
-        std::cin.clear();
-        std::cin.ignore(1000, '\n');
+      if (cin.fail()) {
+        cin.clear();
+        cin.ignore(1000, '\n');
         throw true;
       }
       // static cast to an Menu to store in choice
       choice = static_cast<Menu>(n);
       valid = true;
     }catch (bool invalid) {
-      std::cout << "**** Please input a NUMBER between 0 and 6 ****\n";
+      cout << "**** Please input a NUMBER between 0 and 6 ****\n";
     }
   } while (!valid);
   return;
@@ -696,7 +697,7 @@ void handleSwitch(Node* &head, Node* &tail) {
     // PROCCESSING - displayMenu and validateInput
     displayMenu();
     validateInput(choice);
-    std::cout << "\n";
+    cout << "\n";
     switch (choice) {
       case Exit: {
         break;
@@ -705,13 +706,13 @@ void handleSwitch(Node* &head, Node* &tail) {
         if (head == nullptr) {
           createList(head, tail);
         }else {
-          std::cout << "List is already made\n\n";
+          cout << "List is already made\n\n";
         }
         break;
       }
       case DisplayList: {
         if (isListEmpty(head)) {
-          std::cout << "Can't display an empty list\n\n";
+          cout << "Can't display an empty list\n\n";
         }else {
           handleDisplayList(head);
         }
@@ -719,37 +720,37 @@ void handleSwitch(Node* &head, Node* &tail) {
       }
       case IsEmpty: {
         if (isListEmpty(head)) {
-          std::cout << "Yes, the list is empty.\n\n";
+          cout << "Yes, the list is empty.\n\n";
         }else {
-          std::cout << "No, The list is NOT empty.\n\n";
+          cout << "No, The list is NOT empty.\n\n";
         }
         break;
       }
       case SearchName: {
-        std::string searchKey;
+        string searchKey;
         // if list is not empty else
         if (!isListEmpty(head)) {
-          std::cout << "Who would you like to search for? ";
-          std::cin.ignore(1000, '\n');
-          std::getline(std::cin, searchKey);
+          cout << "Who would you like to search for? ";
+          cin.ignore(1000, '\n');
+          getline(cin, searchKey);
           // PROCCESSING - returns true if name found
           if (!searchName(head, searchKey)) {
-            std::cout << "I'm sorry, \"" << searchKey << "\" was NOT found!\n\n";
+            cout << "I'm sorry, \"" << searchKey << "\" was NOT found!\n\n";
           }
         }else {
-          std::cout << "Can't search an empty list\n\n";
+          cout << "Can't search an empty list\n\n";
         }
         break;
       }
       case RemoveNode: {
-        std::string searchKey;
+        string searchKey;
         if (!isListEmpty(head)) {
-          std::cout << "Who would you like to remove for? ";
-          std::cin.ignore(1000, '\n');
-          std::getline(std::cin, searchKey);
+          cout << "Who would you like to remove for? ";
+          cin.ignore(1000, '\n');
+          getline(cin, searchKey);
           removeNode(head, tail, searchKey);
         }else {
-          std::cout << "Can't remove from an empty list\n\n";
+          cout << "Can't remove from an empty list\n\n";
         }
         break;
       }
@@ -759,15 +760,15 @@ void handleSwitch(Node* &head, Node* &tail) {
       }
       default: {
         // validation for out of bounds
-        std::string number;
-        number = std::to_string(choice);
-        std::cout << std::left;
-        std::cout << "**** The number ";
-        std::cout << number << " is an invalid entry";
-        std::cout << std::right;
-        std::cout << std::setw(11 - number.size())
+        string number;
+        number = to_string(choice);
+        cout << left;
+        cout << "**** The number ";
+        cout << number << " is an invalid entry";
+        cout << right;
+        cout << setw(11 - number.size())
                   << "****\n";
-        std::cout << "**** Please input a number between 0 and 6 ****\n\n";
+        cout << "**** Please input a number between 0 and 6 ****\n\n";
         break;
       }
     }
@@ -802,12 +803,12 @@ void heading() {
 	const int LAB_NUM       = 10;
 	const char LAB_NAME[]   = "Creating Ordered List";
 
-	std::cout << std::left;
-	std::cout << "****************************************************\n";
-	std::cout << "*   PROGRAMMED BY : " << PROGRAMMER << std::endl;
-	std::cout << "*   " << std::setw(14) <<"CLASS" << ": " << CLASS << std::endl;
-	std::cout << "*   " << std::setw(14) <<"SECTION" << ": " << SECTION << std::endl;
-	std::cout << "*   LAB #" << std::setw(9) << LAB_NUM << ": " << LAB_NAME << std::endl;
-	std::cout << "****************************************************\n\n";
-	std::cout << std::right;
+	cout << left;
+	cout << "****************************************************\n";
+	cout << "*   PROGRAMMED BY : " << PROGRAMMER << endl;
+	cout << "*   " << setw(14) <<"CLASS" << ": " << CLASS << endl;
+	cout << "*   " << setw(14) <<"SECTION" << ": " << SECTION << endl;
+	cout << "*   LAB #" << setw(9) << LAB_NUM << ": " << LAB_NAME << endl;
+	cout << "****************************************************\n\n";
+	cout << right;
 }
