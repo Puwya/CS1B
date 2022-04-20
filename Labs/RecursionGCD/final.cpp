@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <fstream>
 #include <string>
+using namespace std;
 
 /*******************************************************************************
  * heading
@@ -48,22 +49,22 @@ int gcd(int m, int n);
 #include "../include/header.h"
 
 int main() {
-  std::fstream oFile;
+  fstream oFile;
   int m, n;
-  oFile.open("OutputFile.txt", std::ios::out);
+  oFile.open("OutputFile.txt", ios::out);
 
   heading();
   for (int i = 0; i < 4; i++) {
-    std::cout << std::left;
-    std::cout << std::setw(26) << "Enter the first integer:";
-    std::cin >> m;
-    std::cout << std::setw(26) << "Enter the second integer:";
-    std::cin >> n;
-    std::cout << "\n";
-    std::cout << std::right;
+    cout << left;
+    cout << setw(26) << "Enter the first integer:";
+    cin >> m;
+    cout << setw(26) << "Enter the second integer:";
+    cin >> n;
+    cout << "\n";
+    cout << right;
     oFile << "The GCD for " << m << " & " << n << " = " << gcd(m, n) << "\n";
   }
-  std::cout << "Thank you for using my GCD calculator!\n";
+  cout << "Thank you for using my GCD calculator!\n";
   oFile.close();
   return 0;
 }
@@ -89,12 +90,12 @@ void heading() {
 	const int LAB_NUM       = 11;
 	const char LAB_NAME[]   = "Recursion GCD";
 
-	std::cout << std::left;
-	std::cout << "****************************************************\n";
-	std::cout << "*   PROGRAMMED BY : " << PROGRAMMER << std::endl;
-	std::cout << "*   " << std::setw(14) <<"CLASS" << ": " << CLASS << std::endl;
-	std::cout << "*   " << std::setw(14) <<"SECTION" << ": " << SECTION << std::endl;
-	std::cout << "*   LAB #" << std::setw(9) << LAB_NUM << ": " << LAB_NAME << std::endl;
-	std::cout << "****************************************************\n\n";
-	std::cout << std::right;
+	cout << left;
+	cout << "****************************************************\n";
+	cout << "*   PROGRAMMED BY : " << PROGRAMMER << endl;
+	cout << "*   " << setw(14) <<"CLASS" << ": " << CLASS << endl;
+	cout << "*   " << setw(14) <<"SECTION" << ": " << SECTION << endl;
+	cout << "*   LAB #" << setw(9) << LAB_NUM << ": " << LAB_NAME << endl;
+	cout << "****************************************************\n\n";
+	cout << right;
 }
