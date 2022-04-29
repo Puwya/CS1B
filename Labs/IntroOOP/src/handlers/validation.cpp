@@ -7,9 +7,39 @@ std::istream &operator>>(std::istream &is, MenuOption &choice) {
   return is;
 }
 
-int validation(const MenuOption &menuOption, const int MIN, const int MAX,
+int validation(int choice, const MenuOption &menuOption, const int MIN, const int MAX,
                const std::string &option, const bool &initialized) {
-  int choice;
+  bool validated = false;
+  do {
+    try{
+      if (menuOption == ChangeAge || menuOption == ChangeValue) {
+        printSetMenu(option);
+      }else if (menuOption == InitAnimals) {
+        printMenu(initialized);
+      }else if (menuOption == NEW) {
+        std::cout << "NEW " << option << ": ";
+      }
+      if (menuOption != Menu) {
+        std::cin >> choice;
+        std::cin.ignore(1000, '\n');
+      }
+      if (std::cin.fail()) {
+        throw true;
+      }
+      validated = true;
+    } catch(bool invalid) {
+      std::cout << "\n**** Please enter a NUMBER between " << MIN << " and ";
+      std::cout << MAX << " ****\n";
+      std::cin.clear();
+      std::cin.ignore(1000, '\n');
+    }
+  }while (!validated);
+  return choice;
+}
+
+float floatValidation(const MenuOption &menuOption, const int MIN, const int MAX,
+               const std::string &option, const bool &initialized) {
+  float choice;
   bool validated = false;
   do {
     try{
@@ -18,7 +48,7 @@ int validation(const MenuOption &menuOption, const int MIN, const int MAX,
       }else if (menuOption == InitAnimals) {
         printMenu(initialized);
       }else {
-        std::cout << "NEW " << option << ": ";
+        std::cout << "\nNEW " << option << ": ";
       }
       std::cin >> choice;
       std::cin.ignore(1000, '\n');

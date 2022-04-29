@@ -7,4 +7,4 @@ project(main)
 add_executable(main src/main.cpp src/handlers/classHeading.cpp
                src/handlers/printMenu.cpp src/handlers/validation.cpp
                src/namespaces/Animal.cpp src/handlers/printSetMenu.cpp
-               src/handlers/validateBounds.cpp)
+               src/handlers/validateBounds.cpp src/handlers/switchLoop.cpp)

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <vector>
 #include "Animal.h"
 
 enum MenuOption {
@@ -11,12 +12,18 @@ enum MenuOption {
   ChangeAge,
   ChangeValue,
   Display,
-  NEW
+  NEW,
+  Menu,
 };
 
-int validateBounds(const MenuOption &menuOption, const int MIN, const int MAX,
+void switchLoop(std::vector<Animal> &animals);
+float validateFloatBounds(const MenuOption &menuOption, const int MIN, const int MAX,
                const std::string &option, const bool &initialized);
-int validation(const MenuOption &menuOption, const int MIN, const int MAX,
+int validation(int choice, const MenuOption &menuOption, const int MIN, const int MAX,
+               const std::string &option, const bool &initialized);
+int validateBounds(int choice, const MenuOption &menuOption, const int MIN, const int MAX,
+               const std::string &option, const bool &initialized);
+float floatValidation(const MenuOption &menuOption, const int MIN, const int MAX,
                const std::string &option, const bool &initialized);
 void printSetMenu(const std::string &option);
 void printMenu(const bool &initialized);
