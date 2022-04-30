@@ -655,6 +655,7 @@ void Animal::changeValue (float value) { this->m_Value = value; }
  ******************************************************************************/
 void Animal::display () const {
   static int i = 0;
+  // PROCESSING: if first iteration then print header
   if (i == 0) {
     cout << left;
     cout << setw(12) << "\nANIMAL" << setw(15) << "NAME";
@@ -662,11 +663,13 @@ void Animal::display () const {
     cout << "----------" << " --------------" << " ---" << " ------------\n";
     cout << right;
   }
+  // PROCESSING: print this->objects attributes
   cout << left;
   cout << setw(11) << m_Type << setw(16) << m_Name;
   cout << right << setw(1) << m_Age << setprecision(2);
   cout << fixed << setw(6) << "$ " << setw(7) << m_Value << "\n";
   cout << right;
+  // Header logic
   if (i < 2) {
     ++i;
   }else {
@@ -722,6 +725,7 @@ float Animal::getValue () const { return this->m_Value; }
 istream &operator>>(istream &is, MenuOption &choice) {
   int data;
   is >> data;
+  // PROCESSING: cast data into type MenuOption and store result in choice
   choice = MenuOption(data);
   return is;
 }
@@ -744,9 +748,12 @@ istream &operator>>(istream &is, MenuOption &choice) {
 int validation(int choice, const MenuOption &menuOption, const int MIN, const int MAX,
                const string &option, const bool &initialized) {
   bool validated = false;
+  // PROCESSING: validation
   do {
     try{
+      // prints set menu if not InitAnimals
       if (menuOption == ChangeAge || menuOption == ChangeValue) {
+        // PROCESSING: call printSetMenu
         printSetMenu(option);
       }else if (menuOption == InitAnimals) {
         printMenu(initialized);
@@ -762,6 +769,7 @@ int validation(int choice, const MenuOption &menuOption, const int MIN, const in
       }
       validated = true;
     } catch(bool invalid) {
+      // Catching exception clearing buffer and relooping
       cout << "\n**** Please enter a NUMBER between " << MIN << " and ";
       cout << MAX << " ****\n";
       cin.clear();
@@ -788,6 +796,7 @@ float floatValidation(const MenuOption &menuOption, const int MIN, const int MAX
                const string &option, const bool &initialized) {
   float choice;
   bool validated = false;
+  // PROCESSING: validation
   do {
     try{
       if (menuOption == ChangeAge || menuOption == ChangeValue) {
@@ -804,6 +813,7 @@ float floatValidation(const MenuOption &menuOption, const int MIN, const int MAX
       }
       validated = true;
     } catch(bool invalid) {
+      // Catching exception clearing buffer and relooping
       cout << "\n**** Please enter a NUMBER between " << MIN << " and ";
       cout << MAX << " ****\n";
       cin.clear();
@@ -829,6 +839,7 @@ void validateChar(char &init) {
       cout << "Are you sure you want to reinitialize (Y/N)? ";
       cin.get(init);
       cin.ignore(1000, '\n');
+      // PROCESSING: toupper just incase they did not capitalize
       if (toupper(init) != 'Y' && toupper(init) != 'N') {
         throw true;
       }
@@ -861,10 +872,13 @@ int validateBounds(int choice, const MenuOption &menuOption, const int MIN, cons
                const string &option, const bool &initialized) {
   int validate;
   do {
+    // calling validation and storing result in validate
     validate = validation(choice, menuOption, MIN, MAX, option, initialized);
+    // PROCESSING: bounds still needs to be validated
     if (validate < MIN || validate > MAX) {
       cout << "\n**** The number " << validate << " is an invalid entry ****\n";
       cout << "**** Please input a number between " << MIN << " and " << MAX << " ****\n\n";
+      // if menuOption is menu then return back to switch statement
       if (menuOption == Menu)
         return 0;
     }
@@ -889,7 +903,9 @@ float validateFloatBounds(const MenuOption &menuOption, const int MIN, const int
                const string &option, const bool &initialized) {
   float validate;
   do {
+    // calling validation and storing result in validate
     validate = validation(0, menuOption, MIN, MAX, option, initialized);
+    // PROCESSING: bounds still needs to be validated
     if (validate < MIN || validate > MAX) {
       cout << "\n**** The number " << validate << " is an invalid entry ****\n";
       cout << "**** Please input a number between " << MIN << " and " << MAX << " ****\n\n";
@@ -915,8 +931,11 @@ void switchLoop(vector<Animal> &animals) {
   bool initialized = false;
   MenuOption choice = Exit;
   do {
+    // PROCESSING: validating int and after casting it into type MenuOption
+    // Also using tenary operator for bounds 
     choice = MenuOption(validation(0, InitAnimals, 0, ((initialized) ? 4 : 1),
                                    "", initialized));
+    // only happens in first menu
     if (!initialized && choice > 1 || choice < 0) {
       validateBounds(choice, Menu, 0, 1, "", initialized);
       continue;
@@ -929,6 +948,7 @@ void switchLoop(vector<Animal> &animals) {
         if (initialized) {
           char init;
           validateChar(init);
+          // reintialize is Y then run setInitialValue
           if (toupper(init) == 'Y') {
             animals[0].setInitialValues("Fluffy", "Sheep", 1, 15000.00f);
             animals[1].setInitialValues("Maa", "Sheep", 2, 16520.35f);
@@ -942,15 +962,21 @@ void switchLoop(vector<Animal> &animals) {
         break;
       }
       case ChangeAge: {
+        // PROCESSING: calling validateBounds and storing it in AnimalChoice
         int animalChoice = validateBounds(0, ChangeAge, 1, 3, "Change Age", true);
+        // PROCESSING: calling validateBounds and storing it in ageChoice
         int ageChoice = validateBounds(0, NEW, 1, 10, "AGE", true);
+        // PROCESSING: this way because of the way menu is set up - 1 because array starts at 0
         animals[animalChoice - 1].changeAge(ageChoice);
         cout << "\nChanging " << animals[animalChoice - 1].getName() << "'s age to " << ageChoice << " ...\n";
         break;
       }
       case ChangeValue: {
+        // PROCESSING: calling validateBounds and storing it in AnimalChoice
         int animalChoice = validateBounds(0, ChangeAge, 1, 3, "Change Value", true);
+        // PROCESSING: calling validateFloatBounds and storing it in valueChoice
         float valueChoice = validateFloatBounds(NEW, 0, 400000, "VALUE", true);
+        // PROCESSING: this way because of the way menu is set up - 1 because array starts at 0
         animals[animalChoice - 1].changeValue(valueChoice);
         cout << "\nChanging " << animals[animalChoice - 1].getName() << "'s value to " << valueChoice << " ...\n";
         break;
