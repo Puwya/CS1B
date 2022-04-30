@@ -34,4 +34,4 @@ int PersonType::getAge() const { return m_Age; }
 // Get m_Weight
 int PersonType::getWeight() const { return m_Weight; }
 // Get m_Height
-double PersonType::getHeight() const {return m_Height; }
+double PersonType::getHeight() const { return m_Height; }
