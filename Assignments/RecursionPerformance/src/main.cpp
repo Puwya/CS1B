@@ -18,6 +18,6 @@
 
 int main() {
   printHeading();
-  printMenu();
+  switchLoop();
   return 0;
 }

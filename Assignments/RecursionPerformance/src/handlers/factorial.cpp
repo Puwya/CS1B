@@ -20,9 +20,9 @@ long long recursiveFactorial(long long n) {
 }
 
 void iterativeFactorialRaw(long long &n) {
-  long long nFactored = n;
+  long long nFactorial = n;
   for (int i = 1; i < n; i++) {
-    nFactored *= i;
+    nFactorial *= i;
   }
 }
 

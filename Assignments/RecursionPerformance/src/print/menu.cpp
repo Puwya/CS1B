@@ -7,6 +7,6 @@ void printMenu() {
   std::cout << "3 - Compare Performance for Factorial Implementations\n";
   std::cout << "4 - Compare Performance for Fibonacci Series Implementations\n";
   std::cout << "0 - EXIT\n";
-  std::cout << "Enter an option (0 to exit):\n";
+  std::cout << "Enter an option (0 to exit): ";
   return;
 }
