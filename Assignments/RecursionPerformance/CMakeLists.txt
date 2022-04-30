@@ -5,4 +5,4 @@ set(CMAKE_BUILD_TYPE Debug)
 
 project(main)
 add_executable(main src/main.cpp src/print/menu.cpp src/print/heading.cpp
-               src/handlers/factorial.cpp)
+               src/handlers/factorial.cpp src/handlers/fibonacci.cpp)
