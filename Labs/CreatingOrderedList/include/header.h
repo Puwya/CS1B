@@ -6,7 +6,7 @@
 #include <string>
 #include <fstream>
 
-struct Node {
+class Node {
  public:
   std::string name;
   char gender;
