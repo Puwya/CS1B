@@ -9,6 +9,7 @@ void SheepList::addSheep(const Sheep &newSheep) {
     std::cout << "List is full sorry!\n";
   }
 }
+
 void SheepList::clear() {
   for (int i = 0; i < sheepCount; ++i) {
     sheepArray[i].setName("");
@@ -20,6 +21,7 @@ void SheepList::clear() {
 void SheepList::size() const { 
   std::cout << "There are " << sheepCount << " sheep in the list!\n"; 
 }
+
 bool SheepList::find(const std::string name, const unsigned int &age) const {
   bool found = false;
   int i = 0;
@@ -32,6 +34,7 @@ bool SheepList::find(const std::string name, const unsigned int &age) const {
   }
   return false;
 }
+
 void SheepList::listOneSheep(const int &index) const {
   std::cout << "NAME           AGE\n";
   std::cout << "-------------- ---\n";
@@ -40,6 +43,7 @@ void SheepList::listOneSheep(const int &index) const {
   std::cout << sheepArray[index].getAge() << '\n';
   std::cout << std::right;
 }
+
 void SheepList::firstSheep() const {
   listOneSheep(0);
   std::cout << "Is at the front of the list.\n";

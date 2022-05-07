@@ -1,6 +1,6 @@
 #include "../include/Sheep.h"
 
-Sheep::Sheep() : m_Name(""), m_Age(0) {}
+Sheep::Sheep() : m_Name(""), m_Age(0), next(nullptr) {}
 Sheep::Sheep(const std::string &name, const unsigned int &age) 
     : m_Name(name), m_Age(age) {}
 Sheep::~Sheep() {}

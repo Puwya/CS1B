@@ -2,10 +2,15 @@
 #define SHEEP_H_
 #include <string>
 
+class SheepLinkedList;
+
 class Sheep {
  private:
   std::string m_Name;
   unsigned int m_Age;
+  Sheep* next;
+  friend SheepLinkedList;
+  friend std::ostream &operator<<(std::ostream &os, const SheepLinkedList &sheepList);
  public:
   Sheep();
   Sheep(const std::string &name, const unsigned int &age);
