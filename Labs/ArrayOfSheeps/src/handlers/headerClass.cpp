@@ -29,5 +29,5 @@ void headerClass() {
 	std::cout << std::right;
   std::cout << "*************************************\n";
   std::cout << "* WELCOME TO THE SHEEP LIST MANAGER *\n";
-  std::cout << "*************************************\n\n";
+  std::cout << "*************************************\n";
 }

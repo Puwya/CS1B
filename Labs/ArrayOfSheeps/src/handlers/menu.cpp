@@ -1,7 +1,7 @@
 #include "../../include/header.h"
 
 void menu() {
-  std::cout << "SHEEP LIST MANAGER\n";
+  std::cout << "\nSHEEP LIST MANAGER\n";
   std::cout << "1 - Add Sheep\n";
   std::cout << "2 - Output 1st Sheep\n";
   std::cout << "3 - Find Sheep\n";

@@ -3,6 +3,16 @@
 #include <iostream>
 #include <iomanip>
 
+enum Menu {
+  Exit = 0,
+  AddSheep,
+  FirstSheep,
+  FindSheep,
+  ListSize,
+  OutputList,
+  ClearList
+};
+
 /*******************************************************************************
  * 
  ------------------------------------------------------------------------------- 
@@ -12,5 +22,5 @@
  ******************************************************************************/
 void menu();
 void headerClass();
-
+void validateInt(unsigned int &choice, const bool &isMenu, const int MIN, const int MAX);
 #endif // HEADER_H_

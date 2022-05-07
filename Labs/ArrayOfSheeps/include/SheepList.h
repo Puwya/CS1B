@@ -19,8 +19,8 @@ class SheepList {
   void addSheep(const Sheep &newSheep);
   void clear();
 
-  void size() const;
-  bool find(const std::string name, const unsigned int &age) const;
+  int size() const;
+  bool find(const std::string name) const;
   void firstSheep() const;
 };
 #endif // SHEEP_LIST_H_

@@ -16,7 +16,7 @@ class SheepLinkedList : public SheepList {
   void addSheep(const std::string &name, const unsigned int &age);
   void clear();
 
-  bool find(const std::string name, const unsigned int &age) const;
+  bool find(const std::string name) const;
   void firstSheep() const;
 };
 #endif // SHEEP_LINKED_LIST_H_
