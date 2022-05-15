@@ -1,7 +1,7 @@
 #include "../include/Animal.h"
 
 // Construtors
-Animal::Animal() : Animal("", 0)  {}
+Animal::Animal() : Animal("", 0) {}
 Animal::Animal(const std::string &name, const unsigned int &age) 
     : m_Name(name), m_Age(age) {}
 // Getters

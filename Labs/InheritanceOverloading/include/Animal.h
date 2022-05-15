@@ -6,8 +6,8 @@
 
 class Animal {
  public:
-  Animal() noexcept;
-  Animal(const std::string &name, const unsigned int &age) noexcept;
+  Animal();
+  Animal(const std::string &name, const unsigned int &age);
   ~Animal() {}
   // Getters
   std::string getName() const;
