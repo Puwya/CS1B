@@ -8,7 +8,8 @@ enum WoolColor { kWhite = 0, kBlack };
 class Sheep : public Animal {
  public:
   Sheep();
-  Sheep(const WoolType &woolType, const WoolColor &woolColor);
+  Sheep(const std::string &name, const unsigned int &age,
+        const WoolType &woolType, const WoolColor &woolColor);
   ~Sheep() {}
   // Getters
   WoolType getWoolType() const;
