@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(main)
 
-add_executable(${PROJECT_NAME} src/main.cpp src/Animal.cpp src/Sheep.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp src/Animal.cpp src/Sheep.cpp src/Pig.cpp src/Livestock.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC /include)
 
 # # Letting CMake find library

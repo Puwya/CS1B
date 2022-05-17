@@ -18,7 +18,7 @@ class Sheep : public Animal {
   void setWoolType(const WoolType &woolType);
   void setWoolColor(const WoolColor &woolColor);
   // Methods
-  virtual void print() const override;
+  void print() const;
  private:
   WoolType m_WoolType;
   WoolColor m_WoolColor;
