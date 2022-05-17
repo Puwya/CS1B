@@ -12,5 +12,5 @@ void Animal::setName(const std::string &name) { m_Name = name; }
 void Animal::setAge(const unsigned int &age) { m_Age = age; }
 // Methods
 void Animal::print() const {
-  std::cout << std::setw(11) << m_Name << std::setw(5) << m_Age;
+  std::cout << std::setw(12) << m_Name << std::setw(4) << m_Age;
 }
