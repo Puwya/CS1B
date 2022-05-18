@@ -1,11 +1,14 @@
 cmake_minimum_required(VERSION 3.15)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_BUILD_TYPE Debug)
 
 project(main)
 
-add_executable(${PROJECT_NAME} src/main.cpp src/Animal.cpp src/Sheep.cpp
-               src/Pig.cpp src/Livestock.cpp src/initPigs.cpp src/initSheeps.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp src/classes/Animal.cpp 
+               src/classes/Sheep.cpp src/classes/Pig.cpp src/classes/Livestock.cpp
+               src/memory/initPigs.cpp src/memory/initSheeps.cpp
+               src/handlers/menu.cpp src/handlers/heading.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC /include)
 
 # # Letting CMake find library

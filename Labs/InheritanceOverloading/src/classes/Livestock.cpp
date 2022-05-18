@@ -1,4 +1,4 @@
-#include "../include/Livestock.h"
+#include "../../include/Livestock.h"
 
 void Livestock::print() const {
   std::cout << std::left;
@@ -23,3 +23,10 @@ void Livestock::print() const {
   }
   std::cout << std::right;
 }
+
+void Livestock::clear() { 
+  m_SheepLivestock.clear();
+  m_PigLivestock.clear();
+}
+void Livestock::clearSheep() { m_SheepLivestock.clear(); }
+void Livestock::clearPig() { m_PigLivestock.clear(); }

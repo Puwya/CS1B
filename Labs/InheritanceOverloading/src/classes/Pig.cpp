@@ -1,4 +1,4 @@
-#include "../include/Pig.h"
+#include "../../include/Pig.h"
 
 // Constructors
 Pig::Pig() : Pig("", 0, kStraight) {}

@@ -1,4 +1,4 @@
-#include "../include/Sheep.h"
+#include "../../include/Sheep.h"
 
 // Constructors
 Sheep::Sheep() : Sheep("", 0, kLong, kWhite) {}
