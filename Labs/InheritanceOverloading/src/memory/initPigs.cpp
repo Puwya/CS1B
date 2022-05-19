@@ -63,10 +63,10 @@ bool attributesValidated(std::string &errorCode, const unsigned int &age,
 void LogValidationError(const std::string &errorCode, const std::string &name,
                         const unsigned int &age, const std::string &tailType) {
   std::cout << std::left;
-  std::cout << "ERROR CODE: " << errorCode << "\n";
+  std::cout << "\nERROR CODE: " << errorCode << "\n";
   std::cout << std::setw(10) << "Name:" << name << "\n";
   std::cout << std::setw(10) << "Age:" << age << "\n";
   std::cout << std::setw(10) << "TailType:" << tailType << "\n";
-  std::cout << "[Initialization failed on this Pig]\n\n";
+  std::cout << "[Initialization failed on this Pig]\n";
   std::cout << std::right;
 }

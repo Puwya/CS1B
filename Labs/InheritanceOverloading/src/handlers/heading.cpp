@@ -26,6 +26,6 @@ void heading() {
 	std::cout << "*   " << std::setw(14) <<"CLASS" << ": " << CLASS << std::endl;
 	std::cout << "*   " << std::setw(14) <<"SECTION" << ": " << SECTION << std::endl;
 	std::cout << "*   LAB #" << std::setw(9) << LAB_NUM << ": " << LAB_NAME << std::endl;
-	std::cout << "***********************************************************\n\n";
+	std::cout << "***********************************************************\n";
 	std::cout << std::right;
 }

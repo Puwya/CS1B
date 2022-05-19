@@ -76,11 +76,11 @@ void LogValidationError(const std::string &errorCode, const std::string &name,
                         const unsigned int &age, const std::string &woolType,
                         const std::string &woolColor) {
   std::cout << std::left;
-  std::cout << "ERROR CODE: " << errorCode << "\n";
+  std::cout << "\nERROR CODE: " << errorCode << "\n";
   std::cout << std::setw(11) << "Name:" << name << "\n";
   std::cout << std::setw(11) << "Age:" << age << "\n";
   std::cout << std::setw(11) << "WoolType:" << woolType << "\n";
   std::cout << std::setw(11) << "WoolColor:" << woolColor << "\n";
-  std::cout << "[Initialization failed on this Sheep]\n\n";
+  std::cout << "[Initialization failed on this Sheep]\n";
   std::cout << std::right;
 }

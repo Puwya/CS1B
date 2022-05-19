@@ -2,7 +2,7 @@
 
 void Livestock::print() const {
   std::cout << std::left;
-  std::cout << "THE SHEEP:\n\n";
+  std::cout << "\nTHE SHEEP:\n\n";
   std::cout << std::setw(11) << "NAME" << std::setw(5) << "AGE";
   std::cout << std::setw(10) << "WOOLTYPE" << std::setw(5) << "COLOR\n";
   std::cout << std::setw(11) << "---------" << std::setw(5) << "---";

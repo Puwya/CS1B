@@ -1,4 +1,5 @@
 #include "../include/main.h"
+#include "handlers/mainSwitch.cpp"
 /*******************************************************************************
  * AUTHOR      : Carlos Aguilera
  * STUDENT ID  : 1152562
