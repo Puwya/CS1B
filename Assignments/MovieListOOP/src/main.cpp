@@ -29,11 +29,12 @@
  * RETURNS - 
  ******************************************************************************/
 
+void heading(std::ostream &os);
 
 void delay(const std::string &inFileInput, const std::string &oFileInput) {
   for (int i = 3; i > 0; --i) {
     system("clear");
-    heading();
+    heading(std::cout);
     std::cout << "INPUT FILE: " << inFileInput << '\n';
     std::cout << "OUTPUT FILE: " << oFileInput << '\n';
     std::cout << "READING: System Complete in -> " << i << '\n';
@@ -42,7 +43,7 @@ void delay(const std::string &inFileInput, const std::string &oFileInput) {
 }
 
 int main() {
-  heading();
+  heading(std::cout);
   MovieList list;
   std::string inFileInput;
   std::string oFileInput;

@@ -3,6 +3,8 @@
 #include <iostream>
 #include <iomanip>
 
+void heading(std::ostream &os);
+
 void MovieList::FileInput(std::fstream &inFile, DVDNode &node) {
   std::getline(inFile, node.title);
   std::getline(inFile, node.leadingActor);
@@ -74,6 +76,7 @@ void MovieList::createList(const std::string &inFileInput) {
 void MovieList::outputList(const std::string &oFileInput) {
   DVDNode* node = head;
   std::fstream oFile(oFileInput, std::ios::out);
+  heading(oFile);
   if (oFile.is_open()) {
     for (int i = 0; i < stackCount; ++i) {
       oFile << std::left;

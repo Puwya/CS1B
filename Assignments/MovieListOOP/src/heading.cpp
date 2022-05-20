@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
 
-void heading() {
+void heading(std::ostream &os) {
 
 	/***********************************************************************
 	 * CONSTANTS
@@ -17,15 +17,15 @@ void heading() {
 	const char PROGRAMMER[] = "Carlos Aguilera";
 	const char CLASS[]      = "CS1B";
 	const char SECTION[]    = "MW: 7:30p - 9:50p";
-	const int LAB_NUM       = 1;
-	const char LAB_NAME[]   = "";
+	const int LAB_NUM       = 5;
+	const char LAB_NAME[]   = "Movie List OOP";
 
-	std::cout << std::left;
-	std::cout << "****************************************************\n";
-	std::cout << "*   PROGRAMMED BY : " << PROGRAMMER << std::endl;
-	std::cout << "*   " << std::setw(14) <<"CLASS" << ": " << CLASS << std::endl;
-	std::cout << "*   " << std::setw(14) <<"SECTION" << ": " << SECTION << std::endl;
-	std::cout << "*   LAB #" << std::setw(9) << LAB_NUM << ": " << LAB_NAME << std::endl;
-	std::cout << "****************************************************\n\n";
-	std::cout << std::right;
+	os << std::left;
+	os << "****************************************************\n";
+	os << "*   PROGRAMMED BY : " << PROGRAMMER << std::endl;
+	os << "*   " << std::setw(14) <<"CLASS" << ": " << CLASS << std::endl;
+	os << "*   " << std::setw(14) <<"SECTION" << ": " << SECTION << std::endl;
+	os << "*   LAB #" << std::setw(9) << LAB_NUM << ": " << LAB_NAME << std::endl;
+	os << "****************************************************\n\n";
+	os << std::right;
 }
