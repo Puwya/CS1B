@@ -1,26 +1,27 @@
 #include "../../include/StackList.h"
+#include <iostream>
 
 void StackList::Push(const DVDNode &newDVD) {
   DVDNode* node = new DVDNode;
-  *node = newDVD;
-  node->next = head;
-  head = node;
-  if (head->next == nullptr) {
-    tail = head;
+  if (node != nullptr) {
+    *node = newDVD;
+    node->next = head;
+    head = node;
     ++stackCount;
     return;
   }
-  node->next->prev = node;
-  ++stackCount;
+  std::cout << "\nERROR: [Allocation of Memory]\n";
 }
 
 DVDNode StackList::Pop() {
-  DVDNode tempReturn = *tail;
-  tail = tail->prev;
-  delete tail;
-  tail->next = nullptr;
+  if (head == nullptr)
+    return DVDNode();
+  DVDNode temp = *head;
+  DVDNode* node = head;
+  head = node->next;
+  delete node;
   --stackCount;
-  return tempReturn;
+  return temp;
 }
 
 bool StackList::IsEmpty() const { return (head == nullptr); }

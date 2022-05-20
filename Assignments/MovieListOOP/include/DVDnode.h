@@ -3,7 +3,7 @@
 #include <string>
 
 struct DVDNode { 
-  DVDNode() : next(nullptr), prev(nullptr) {}
+  DVDNode() : next(nullptr) {}
 
   std::string title;           // store movie's title 
   std::string leadingActor;    // store leading actor/actress 
@@ -14,7 +14,6 @@ struct DVDNode {
   int         rating;          // store movie’s rating 
   std::string synopsis;        // store movie’s synopsis 
   DVDNode     *next;           // linked list next pointer 
-  DVDNode     *prev;
 }; 
 
 #endif // DVDNODE_H_
