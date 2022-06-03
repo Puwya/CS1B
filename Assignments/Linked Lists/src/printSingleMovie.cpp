@@ -10,6 +10,7 @@
  * std::string line OUT - used to output line of text
  * std::string word CALC - used to hold word and add to line
  * const int maxLineLength CALC max length a line can be
+ * 
  ***************************************************************************/
 
 void printSingleMovie(DVD* node, std::fstream &oFile) {
